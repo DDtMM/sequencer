@@ -28,6 +28,11 @@
               {
                 "glob": "**/*",
                 "input": "public"
+              },
+              {
+                "glob": "404.md",
+                "input": "/",
+                "output": "/"
               }
             ],
             "styles": [
