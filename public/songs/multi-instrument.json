@@ -8,7 +8,8 @@
     "effects": [
       {
         "name": "reverb",
-        "decay": 2.0
+        "decay": 2.0,
+        "wet": 0.2
       }
     ]
   },
@@ -26,14 +27,7 @@
     },
     {
       "id": "lead",
-      "pan": 0.3,
-      "effects": [
-        {
-          "name": "delay",
-          "delayTime": "8n",
-          "feedback": 0.3
-        }
-      ]
+      "pan": 0.3
     },
     {
       "id": "pad",
@@ -42,7 +36,8 @@
           "name": "chorus",
           "frequency": 1.5,
           "delayTime": 3.5,
-          "depth": 0.7
+          "depth": 0.7,
+          "wet": 0.5
         }
       ]
     }

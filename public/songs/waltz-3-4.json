@@ -9,7 +9,8 @@
     "effects": [
       {
         "name": "reverb",
-        "decay": 2.0
+        "decay": 2.0,
+        "wet": 0.2
       }
     ]
   },
@@ -17,8 +18,8 @@
     {
       "id": "ch1",
       "effects": [],
-      "pan": -1,
-            "volume": -3
+      "pan": -0.5,
+      "volume": -3
     },
       {
       "id": "ch2",
@@ -29,7 +30,7 @@
           "feedback": 0.3
         }
       ],
-      "pan": -1,
+      "pan": 0.5,
       "volume": -3
     }
   ],

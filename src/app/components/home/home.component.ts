@@ -56,11 +56,6 @@ export class HomeComponent {
       description: 'Bass, lead, and pad with effects chains'
     },
     {
-      id: 'complex-electronic',
-      title: 'Complex Electronic',
-      description: 'Kick drums, arpeggios, and melody with advanced effects'
-    },
-    {
       id: 'nested-patterns',
       title: 'Nested Patterns Demo',
       description: 'Demonstrates pattern composition with StartPattern events'
