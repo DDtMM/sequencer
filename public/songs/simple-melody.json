@@ -1,0 +1,122 @@
+{
+  "$schema": "./song.schema.json",
+  "title": "Simple Melody",
+  "bpm": 120,
+  "beatsPerBar": 4,
+  "masterChannel": {
+    "id": "master",
+    "pan": 0
+  },
+  "channels": [
+    {
+      "id": "ch1",
+      "pan": -0.99,
+      "effects": [      {
+        "name": "pingPongDelay",
+        "delayTime": "1n",
+        "feedback": 0.15,
+        "wet": 0.5
+      }]
+    }
+  ],
+  "instruments": [
+    {
+      "id": "synth1",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "sine"
+          },
+          "envelope": {
+            "a": 0.01,
+            "d": 0.1,
+            "s": 0.5,
+            "r": 0.3
+          }
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "melody",
+      "events": [
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "synth1",
+          "channelId": "ch1",
+          "note": "C4",
+          "velocity": 0.8,
+          "duration": 1,
+          "beat": 0
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "synth1",
+          "channelId": "ch1",
+          "note": "E4",
+          "velocity": 0.8,
+          "duration": 1,
+          "beat": 1
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "synth1",
+          "channelId": "ch1",
+          "note": "G4",
+          "velocity": 0.8,
+          "duration": 1,
+          "beat": 2
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "synth1",
+          "channelId": "ch1",
+          "note": "C5",
+          "velocity": 0.8,
+          "duration": 1,
+          "beat": 3
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "synth1",
+          "channelId": "ch1",
+          "note": "G4",
+          "velocity": 0.8,
+          "duration": 1,
+          "beat": 4
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "synth1",
+          "channelId": "ch1",
+          "note": "E4",
+          "velocity": 0.8,
+          "duration": 1,
+          "beat": 5
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "synth1",
+          "channelId": "ch1",
+          "note": "C4",
+          "velocity": 0.8,
+          "duration": 2,
+          "beat": 6
+        }
+      ],
+      "bars": 2
+    }
+  ],
+  "sequence": [
+    {
+      "patternId": "melody",
+      "beat": 0
+    },
+    {
+      "patternId": "melody",
+      "beat": 8
+    }
+  ]
+}

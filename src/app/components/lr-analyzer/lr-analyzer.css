@@ -1,0 +1,50 @@
+.analyzer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #1a1a1a;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+}
+
+.channel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.label {
+  font-weight: bold;
+  width: 1.5rem;
+  color: #fff;
+}
+
+.meter-track {
+  flex: 1;
+  height: 1.5rem;
+  background: #333;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.meter-fill {
+  height: 100%;
+  transition: width 0.05s ease-out;
+}
+
+.meter-fill.left {
+  background: linear-gradient(to right, #22c55e, #ef4444);
+}
+
+.meter-fill.right {
+  background: linear-gradient(to right, #3b82f6, #ef4444);
+}
+
+.value {
+  width: 3rem;
+  text-align: right;
+  font-size: 0.875rem;
+  color: #999;
+}

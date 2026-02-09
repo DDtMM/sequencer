@@ -1,0 +1,2670 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "AMTypeWithPartials": {
+            "enum": [
+                "amsawtooth1",
+                "amsawtooth10",
+                "amsawtooth11",
+                "amsawtooth12",
+                "amsawtooth13",
+                "amsawtooth14",
+                "amsawtooth15",
+                "amsawtooth16",
+                "amsawtooth17",
+                "amsawtooth18",
+                "amsawtooth19",
+                "amsawtooth2",
+                "amsawtooth20",
+                "amsawtooth21",
+                "amsawtooth22",
+                "amsawtooth23",
+                "amsawtooth24",
+                "amsawtooth25",
+                "amsawtooth26",
+                "amsawtooth27",
+                "amsawtooth28",
+                "amsawtooth29",
+                "amsawtooth3",
+                "amsawtooth30",
+                "amsawtooth31",
+                "amsawtooth32",
+                "amsawtooth4",
+                "amsawtooth5",
+                "amsawtooth6",
+                "amsawtooth7",
+                "amsawtooth8",
+                "amsawtooth9",
+                "amsine1",
+                "amsine10",
+                "amsine11",
+                "amsine12",
+                "amsine13",
+                "amsine14",
+                "amsine15",
+                "amsine16",
+                "amsine17",
+                "amsine18",
+                "amsine19",
+                "amsine2",
+                "amsine20",
+                "amsine21",
+                "amsine22",
+                "amsine23",
+                "amsine24",
+                "amsine25",
+                "amsine26",
+                "amsine27",
+                "amsine28",
+                "amsine29",
+                "amsine3",
+                "amsine30",
+                "amsine31",
+                "amsine32",
+                "amsine4",
+                "amsine5",
+                "amsine6",
+                "amsine7",
+                "amsine8",
+                "amsine9",
+                "amsquare1",
+                "amsquare10",
+                "amsquare11",
+                "amsquare12",
+                "amsquare13",
+                "amsquare14",
+                "amsquare15",
+                "amsquare16",
+                "amsquare17",
+                "amsquare18",
+                "amsquare19",
+                "amsquare2",
+                "amsquare20",
+                "amsquare21",
+                "amsquare22",
+                "amsquare23",
+                "amsquare24",
+                "amsquare25",
+                "amsquare26",
+                "amsquare27",
+                "amsquare28",
+                "amsquare29",
+                "amsquare3",
+                "amsquare30",
+                "amsquare31",
+                "amsquare32",
+                "amsquare4",
+                "amsquare5",
+                "amsquare6",
+                "amsquare7",
+                "amsquare8",
+                "amsquare9",
+                "amtriangle1",
+                "amtriangle10",
+                "amtriangle11",
+                "amtriangle12",
+                "amtriangle13",
+                "amtriangle14",
+                "amtriangle15",
+                "amtriangle16",
+                "amtriangle17",
+                "amtriangle18",
+                "amtriangle19",
+                "amtriangle2",
+                "amtriangle20",
+                "amtriangle21",
+                "amtriangle22",
+                "amtriangle23",
+                "amtriangle24",
+                "amtriangle25",
+                "amtriangle26",
+                "amtriangle27",
+                "amtriangle28",
+                "amtriangle29",
+                "amtriangle3",
+                "amtriangle30",
+                "amtriangle31",
+                "amtriangle32",
+                "amtriangle4",
+                "amtriangle5",
+                "amtriangle6",
+                "amtriangle7",
+                "amtriangle8",
+                "amtriangle9"
+            ],
+            "type": "string"
+        },
+        "AdsrEnvelope": {
+            "properties": {
+                "a": {
+                    "type": "number"
+                },
+                "d": {
+                    "type": "number"
+                },
+                "r": {
+                    "type": "number"
+                },
+                "s": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "AllNonCustomOscillatorType": {
+            "enum": [
+                "sawtooth",
+                "sawtooth1",
+                "sawtooth10",
+                "sawtooth11",
+                "sawtooth12",
+                "sawtooth13",
+                "sawtooth14",
+                "sawtooth15",
+                "sawtooth16",
+                "sawtooth17",
+                "sawtooth18",
+                "sawtooth19",
+                "sawtooth2",
+                "sawtooth20",
+                "sawtooth21",
+                "sawtooth22",
+                "sawtooth23",
+                "sawtooth24",
+                "sawtooth25",
+                "sawtooth26",
+                "sawtooth27",
+                "sawtooth28",
+                "sawtooth29",
+                "sawtooth3",
+                "sawtooth30",
+                "sawtooth31",
+                "sawtooth32",
+                "sawtooth4",
+                "sawtooth5",
+                "sawtooth6",
+                "sawtooth7",
+                "sawtooth8",
+                "sawtooth9",
+                "sine",
+                "sine1",
+                "sine10",
+                "sine11",
+                "sine12",
+                "sine13",
+                "sine14",
+                "sine15",
+                "sine16",
+                "sine17",
+                "sine18",
+                "sine19",
+                "sine2",
+                "sine20",
+                "sine21",
+                "sine22",
+                "sine23",
+                "sine24",
+                "sine25",
+                "sine26",
+                "sine27",
+                "sine28",
+                "sine29",
+                "sine3",
+                "sine30",
+                "sine31",
+                "sine32",
+                "sine4",
+                "sine5",
+                "sine6",
+                "sine7",
+                "sine8",
+                "sine9",
+                "square",
+                "square1",
+                "square10",
+                "square11",
+                "square12",
+                "square13",
+                "square14",
+                "square15",
+                "square16",
+                "square17",
+                "square18",
+                "square19",
+                "square2",
+                "square20",
+                "square21",
+                "square22",
+                "square23",
+                "square24",
+                "square25",
+                "square26",
+                "square27",
+                "square28",
+                "square29",
+                "square3",
+                "square30",
+                "square31",
+                "square32",
+                "square4",
+                "square5",
+                "square6",
+                "square7",
+                "square8",
+                "square9",
+                "triangle",
+                "triangle1",
+                "triangle10",
+                "triangle11",
+                "triangle12",
+                "triangle13",
+                "triangle14",
+                "triangle15",
+                "triangle16",
+                "triangle17",
+                "triangle18",
+                "triangle19",
+                "triangle2",
+                "triangle20",
+                "triangle21",
+                "triangle22",
+                "triangle23",
+                "triangle24",
+                "triangle25",
+                "triangle26",
+                "triangle27",
+                "triangle28",
+                "triangle29",
+                "triangle3",
+                "triangle30",
+                "triangle31",
+                "triangle32",
+                "triangle4",
+                "triangle5",
+                "triangle6",
+                "triangle7",
+                "triangle8",
+                "triangle9"
+            ],
+            "type": "string"
+        },
+        "AutoFilterEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "autoFilter",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CAutoFilterOptions%3E"
+                }
+            ]
+        },
+        "AutoPannerEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "autoPanner",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CAutoPannerOptions%3E"
+                }
+            ]
+        },
+        "AutoWahEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "autoWah",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CAutoWahOptions%3E"
+                }
+            ]
+        },
+        "BiquadFilterType": {
+            "enum": [
+                "allpass",
+                "bandpass",
+                "highpass",
+                "highshelf",
+                "lowpass",
+                "lowshelf",
+                "notch",
+                "peaking"
+            ],
+            "type": "string"
+        },
+        "BitCrusherEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "bitCrusher",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CBitCrusherOptions%3E"
+                }
+            ]
+        },
+        "ChannelConfig": {
+            "properties": {
+                "effects": {
+                    "items": {
+                        "$ref": "#/definitions/EffectConfig"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "pan": {
+                    "description": "Pan position: -1 (full left) to 1 (full right), 0 is center",
+                    "type": "number"
+                },
+                "volume": {
+                    "type": "number"
+                }
+            },
+            "required": [
+                "id"
+            ],
+            "type": "object"
+        },
+        "ChebyshevEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "chebyshev",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CChebyshevOptions%3E"
+                }
+            ]
+        },
+        "ChorusEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "chorus",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CChorusOptions%3E"
+                }
+            ]
+        },
+        "DelayEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "delay",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CDelayOptions%3E"
+                }
+            ]
+        },
+        "DistortionEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "distortion",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CDistortionOptions%3E"
+                }
+            ]
+        },
+        "EffectConfig": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/AutoFilterEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/AutoPannerEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/AutoWahEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/BitCrusherEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/ChebyshevEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/ChorusEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/DelayEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/DistortionEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/FeedbackDelayEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/FilterEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/FrequencyShifterEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/FreeverbEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/JCReverbEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/PhaserEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/PingPongDelayEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/PitchShiftEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/ReverbEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/StereoWidenerEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/TremoloEffectConfig"
+                },
+                {
+                    "$ref": "#/definitions/VibratoEffectConfig"
+                }
+            ]
+        },
+        "FMTypeWithPartials": {
+            "enum": [
+                "fmsawtooth1",
+                "fmsawtooth10",
+                "fmsawtooth11",
+                "fmsawtooth12",
+                "fmsawtooth13",
+                "fmsawtooth14",
+                "fmsawtooth15",
+                "fmsawtooth16",
+                "fmsawtooth17",
+                "fmsawtooth18",
+                "fmsawtooth19",
+                "fmsawtooth2",
+                "fmsawtooth20",
+                "fmsawtooth21",
+                "fmsawtooth22",
+                "fmsawtooth23",
+                "fmsawtooth24",
+                "fmsawtooth25",
+                "fmsawtooth26",
+                "fmsawtooth27",
+                "fmsawtooth28",
+                "fmsawtooth29",
+                "fmsawtooth3",
+                "fmsawtooth30",
+                "fmsawtooth31",
+                "fmsawtooth32",
+                "fmsawtooth4",
+                "fmsawtooth5",
+                "fmsawtooth6",
+                "fmsawtooth7",
+                "fmsawtooth8",
+                "fmsawtooth9",
+                "fmsine1",
+                "fmsine10",
+                "fmsine11",
+                "fmsine12",
+                "fmsine13",
+                "fmsine14",
+                "fmsine15",
+                "fmsine16",
+                "fmsine17",
+                "fmsine18",
+                "fmsine19",
+                "fmsine2",
+                "fmsine20",
+                "fmsine21",
+                "fmsine22",
+                "fmsine23",
+                "fmsine24",
+                "fmsine25",
+                "fmsine26",
+                "fmsine27",
+                "fmsine28",
+                "fmsine29",
+                "fmsine3",
+                "fmsine30",
+                "fmsine31",
+                "fmsine32",
+                "fmsine4",
+                "fmsine5",
+                "fmsine6",
+                "fmsine7",
+                "fmsine8",
+                "fmsine9",
+                "fmsquare1",
+                "fmsquare10",
+                "fmsquare11",
+                "fmsquare12",
+                "fmsquare13",
+                "fmsquare14",
+                "fmsquare15",
+                "fmsquare16",
+                "fmsquare17",
+                "fmsquare18",
+                "fmsquare19",
+                "fmsquare2",
+                "fmsquare20",
+                "fmsquare21",
+                "fmsquare22",
+                "fmsquare23",
+                "fmsquare24",
+                "fmsquare25",
+                "fmsquare26",
+                "fmsquare27",
+                "fmsquare28",
+                "fmsquare29",
+                "fmsquare3",
+                "fmsquare30",
+                "fmsquare31",
+                "fmsquare32",
+                "fmsquare4",
+                "fmsquare5",
+                "fmsquare6",
+                "fmsquare7",
+                "fmsquare8",
+                "fmsquare9",
+                "fmtriangle1",
+                "fmtriangle10",
+                "fmtriangle11",
+                "fmtriangle12",
+                "fmtriangle13",
+                "fmtriangle14",
+                "fmtriangle15",
+                "fmtriangle16",
+                "fmtriangle17",
+                "fmtriangle18",
+                "fmtriangle19",
+                "fmtriangle2",
+                "fmtriangle20",
+                "fmtriangle21",
+                "fmtriangle22",
+                "fmtriangle23",
+                "fmtriangle24",
+                "fmtriangle25",
+                "fmtriangle26",
+                "fmtriangle27",
+                "fmtriangle28",
+                "fmtriangle29",
+                "fmtriangle3",
+                "fmtriangle30",
+                "fmtriangle31",
+                "fmtriangle32",
+                "fmtriangle4",
+                "fmtriangle5",
+                "fmtriangle6",
+                "fmtriangle7",
+                "fmtriangle8",
+                "fmtriangle9"
+            ],
+            "type": "string"
+        },
+        "FatTypeWithPartials": {
+            "enum": [
+                "fatsawtooth1",
+                "fatsawtooth10",
+                "fatsawtooth11",
+                "fatsawtooth12",
+                "fatsawtooth13",
+                "fatsawtooth14",
+                "fatsawtooth15",
+                "fatsawtooth16",
+                "fatsawtooth17",
+                "fatsawtooth18",
+                "fatsawtooth19",
+                "fatsawtooth2",
+                "fatsawtooth20",
+                "fatsawtooth21",
+                "fatsawtooth22",
+                "fatsawtooth23",
+                "fatsawtooth24",
+                "fatsawtooth25",
+                "fatsawtooth26",
+                "fatsawtooth27",
+                "fatsawtooth28",
+                "fatsawtooth29",
+                "fatsawtooth3",
+                "fatsawtooth30",
+                "fatsawtooth31",
+                "fatsawtooth32",
+                "fatsawtooth4",
+                "fatsawtooth5",
+                "fatsawtooth6",
+                "fatsawtooth7",
+                "fatsawtooth8",
+                "fatsawtooth9",
+                "fatsine1",
+                "fatsine10",
+                "fatsine11",
+                "fatsine12",
+                "fatsine13",
+                "fatsine14",
+                "fatsine15",
+                "fatsine16",
+                "fatsine17",
+                "fatsine18",
+                "fatsine19",
+                "fatsine2",
+                "fatsine20",
+                "fatsine21",
+                "fatsine22",
+                "fatsine23",
+                "fatsine24",
+                "fatsine25",
+                "fatsine26",
+                "fatsine27",
+                "fatsine28",
+                "fatsine29",
+                "fatsine3",
+                "fatsine30",
+                "fatsine31",
+                "fatsine32",
+                "fatsine4",
+                "fatsine5",
+                "fatsine6",
+                "fatsine7",
+                "fatsine8",
+                "fatsine9",
+                "fatsquare1",
+                "fatsquare10",
+                "fatsquare11",
+                "fatsquare12",
+                "fatsquare13",
+                "fatsquare14",
+                "fatsquare15",
+                "fatsquare16",
+                "fatsquare17",
+                "fatsquare18",
+                "fatsquare19",
+                "fatsquare2",
+                "fatsquare20",
+                "fatsquare21",
+                "fatsquare22",
+                "fatsquare23",
+                "fatsquare24",
+                "fatsquare25",
+                "fatsquare26",
+                "fatsquare27",
+                "fatsquare28",
+                "fatsquare29",
+                "fatsquare3",
+                "fatsquare30",
+                "fatsquare31",
+                "fatsquare32",
+                "fatsquare4",
+                "fatsquare5",
+                "fatsquare6",
+                "fatsquare7",
+                "fatsquare8",
+                "fatsquare9",
+                "fattriangle1",
+                "fattriangle10",
+                "fattriangle11",
+                "fattriangle12",
+                "fattriangle13",
+                "fattriangle14",
+                "fattriangle15",
+                "fattriangle16",
+                "fattriangle17",
+                "fattriangle18",
+                "fattriangle19",
+                "fattriangle2",
+                "fattriangle20",
+                "fattriangle21",
+                "fattriangle22",
+                "fattriangle23",
+                "fattriangle24",
+                "fattriangle25",
+                "fattriangle26",
+                "fattriangle27",
+                "fattriangle28",
+                "fattriangle29",
+                "fattriangle3",
+                "fattriangle30",
+                "fattriangle31",
+                "fattriangle32",
+                "fattriangle4",
+                "fattriangle5",
+                "fattriangle6",
+                "fattriangle7",
+                "fattriangle8",
+                "fattriangle9"
+            ],
+            "type": "string"
+        },
+        "FeedbackDelayEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "feedbackDelay",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CFeedbackDelayOptions%3E"
+                }
+            ]
+        },
+        "FilterEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "filter",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CFilterOptions%3E"
+                }
+            ]
+        },
+        "FilterRollOff": {
+            "enum": [
+                -12,
+                -24,
+                -48,
+                -96
+            ],
+            "type": "number"
+        },
+        "FreeverbEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "freeverb",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CFreeverbOptions%3E"
+                }
+            ]
+        },
+        "Frequency": {
+            "description": "Frequency can be described similar to time, except ultimately the\nvalues are converted to frequency instead of seconds. A number\nis taken literally as the value in hertz. Additionally any of the\nTime encodings can be used. Note names in the form\nof NOTE OCTAVE (i.e. C4) are also accepted and converted to their\nfrequency value.",
+            "type": [
+                "string",
+                "number"
+            ]
+        },
+        "FrequencyShifterEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "frequencyShifter",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CFrequencyShifterOptions%3E"
+                }
+            ]
+        },
+        "Instrument": {
+            "properties": {
+                "generators": {
+                    "items": {
+                        "$ref": "#/definitions/OscillatorGenerator"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "generators",
+                "id"
+            ],
+            "type": "object"
+        },
+        "InstrumentOnEvent": {
+            "properties": {
+                "beat": {
+                    "description": "The beat in the song at which this pattern starts.  Can be fractional.",
+                    "type": "number"
+                },
+                "channelId": {
+                    "description": "The channel to play the instrument on.",
+                    "type": "string"
+                },
+                "duration": {
+                    "description": "The duration of the played note in beats.",
+                    "type": "number"
+                },
+                "instrumentId": {
+                    "description": "The instrument to play.",
+                    "type": "string"
+                },
+                "note": {
+                    "$ref": "#/definitions/Frequency",
+                    "description": "The note to play, specified as a frequency or note name."
+                },
+                "type": {
+                    "const": "InstrumentOn",
+                    "type": "string"
+                },
+                "velocity": {
+                    "description": "The velocity of the note, from 0 to 1.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "beat",
+                "channelId",
+                "duration",
+                "instrumentId",
+                "note",
+                "type",
+                "velocity"
+            ],
+            "type": "object"
+        },
+        "JCReverbEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "jcReverb",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CJCReverbOptions%3E"
+                }
+            ]
+        },
+        "NonCustomOscillatorType": {
+            "enum": [
+                "sawtooth",
+                "sine",
+                "square",
+                "triangle"
+            ],
+            "type": "string"
+        },
+        "Omit<ChannelConfig,\"id\">": {
+            "properties": {
+                "effects": {
+                    "items": {
+                        "$ref": "#/definitions/EffectConfig"
+                    },
+                    "type": "array"
+                },
+                "pan": {
+                    "description": "Pan position: -1 (full left) to 1 (full right), 0 is center",
+                    "type": "number"
+                },
+                "volume": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "Omit<FilterOptions,\"detune\"|\"frequency\"|\"gain\"|keyofSourceOptions>": {
+            "properties": {
+                "Q": {
+                    "type": "number"
+                },
+                "rolloff": {
+                    "$ref": "#/definitions/FilterRollOff"
+                },
+                "type": {
+                    "$ref": "#/definitions/BiquadFilterType"
+                }
+            },
+            "required": [
+                "Q",
+                "rolloff",
+                "type"
+            ],
+            "type": "object"
+        },
+        "OmitContext<AutoFilterOptions>": {
+            "properties": {
+                "baseFrequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "depth": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "filter": {
+                    "$ref": "#/definitions/Omit%3CFilterOptions%2C%22detune%22%7C%22frequency%22%7C%22gain%22%7CkeyofSourceOptions%3E"
+                },
+                "frequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "octaves": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/definitions/ToneOscillatorType"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<AutoPannerOptions>": {
+            "properties": {
+                "channelCount": {
+                    "type": "number"
+                },
+                "depth": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "frequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "type": {
+                    "$ref": "#/definitions/ToneOscillatorType"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<AutoWahOptions>": {
+            "properties": {
+                "Q": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "baseFrequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "follower": {
+                    "$ref": "#/definitions/Time"
+                },
+                "gain": {
+                    "description": "A number representing the multiplication factor applied to a signal",
+                    "type": "number"
+                },
+                "octaves": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "sensitivity": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<BitCrusherOptions>": {
+            "properties": {
+                "bits": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<ChebyshevOptions>": {
+            "properties": {
+                "order": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "oversample": {
+                    "$ref": "#/definitions/OverSampleType"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<ChorusOptions>": {
+            "properties": {
+                "delayTime": {
+                    "description": "One millisecond is a thousandth of a second.",
+                    "type": "number"
+                },
+                "depth": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "feedback": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "frequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "spread": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/definitions/ToneOscillatorType"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<DelayOptions>": {
+            "properties": {
+                "delayTime": {
+                    "$ref": "#/definitions/Time"
+                },
+                "maxDelay": {
+                    "$ref": "#/definitions/Time"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<DistortionOptions>": {
+            "properties": {
+                "distortion": {
+                    "type": "number"
+                },
+                "oversample": {
+                    "$ref": "#/definitions/OverSampleType"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<FeedbackDelayOptions>": {
+            "properties": {
+                "delayTime": {
+                    "$ref": "#/definitions/Time"
+                },
+                "feedback": {
+                    "description": "The feedback from the output back to the input\n```\n+---<--------<---+\n|                |\n|  +----------+  |\n+--> feedback +>-+\n   +----------+\n```",
+                    "type": "number"
+                },
+                "maxDelay": {
+                    "$ref": "#/definitions/Time"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<FilterOptions>": {
+            "properties": {
+                "Q": {
+                    "type": "number"
+                },
+                "detune": {
+                    "description": "A Cent is 1/100th of a semitone.\ne.g. a value of 50 cents would be halfway between two intervals.",
+                    "type": "number"
+                },
+                "frequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "gain": {
+                    "description": "A number representing the multiplication factor applied to a signal",
+                    "type": "number"
+                },
+                "rolloff": {
+                    "$ref": "#/definitions/FilterRollOff"
+                },
+                "type": {
+                    "$ref": "#/definitions/BiquadFilterType"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<FreeverbOptions>": {
+            "properties": {
+                "dampening": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "roomSize": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<FrequencyShifterOptions>": {
+            "properties": {
+                "frequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<JCReverbOptions>": {
+            "properties": {
+                "roomSize": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<PhaserOptions>": {
+            "properties": {
+                "Q": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "baseFrequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "frequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "octaves": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "stages": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<PingPongDelayOptions>": {
+            "properties": {
+                "delayTime": {
+                    "$ref": "#/definitions/Time"
+                },
+                "feedback": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "maxDelay": {
+                    "description": "A number representing a time in seconds",
+                    "type": "number"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<PitchShiftOptions>": {
+            "properties": {
+                "delayTime": {
+                    "$ref": "#/definitions/Time"
+                },
+                "feedback": {
+                    "description": "The feedback from the output back to the input\n```\n+---<--------<---+\n|                |\n|  +----------+  |\n+--> feedback +>-+\n   +----------+\n```",
+                    "type": "number"
+                },
+                "pitch": {
+                    "description": "Half-step note increments, i.e. 12 is an octave above the root. and 1 is a half-step up.",
+                    "type": "number"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "windowSize": {
+                    "description": "A number representing a time in seconds",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<ReverbOptions>": {
+            "properties": {
+                "decay": {
+                    "description": "A number representing a time in seconds",
+                    "type": "number"
+                },
+                "preDelay": {
+                    "description": "A number representing a time in seconds",
+                    "type": "number"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<StereoWidenerOptions>": {
+            "properties": {
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "width": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<TremoloOptions>": {
+            "properties": {
+                "depth": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "frequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "spread": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/definitions/ToneOscillatorType"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OmitContext<VibratoOptions>": {
+            "properties": {
+                "depth": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                },
+                "frequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "maxDelay": {
+                    "description": "A number representing a time in seconds",
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/definitions/ToneOscillatorType"
+                },
+                "wet": {
+                    "description": "A number that is between [0, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "OscillatorGenerator": {
+            "properties": {
+                "detune": {
+                    "description": "A Cent is 1/100th of a semitone.\ne.g. a value of 50 cents would be halfway between two intervals.",
+                    "type": "number"
+                },
+                "effects": {
+                    "items": {
+                        "$ref": "#/definitions/EffectConfig"
+                    },
+                    "type": "array"
+                },
+                "envelope": {
+                    "$ref": "#/definitions/AdsrEnvelope"
+                },
+                "filter": {
+                    "$ref": "#/definitions/RecursivePartial%3COmit%3CFilterOptions%2C%22context%22%3E%3E"
+                },
+                "filterEnvelope": {
+                    "$ref": "#/definitions/AdsrEnvelope"
+                },
+                "oscillator": {
+                    "$ref": "#/definitions/RecursivePartial%3COmniOscillatorSynthOptions%3E"
+                },
+                "portamento": {
+                    "description": "A number representing a time in seconds",
+                    "type": "number"
+                },
+                "type": {
+                    "const": "oscillator",
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "type"
+            ],
+            "type": "object"
+        },
+        "OverSampleType": {
+            "enum": [
+                "2x",
+                "4x",
+                "none"
+            ],
+            "type": "string"
+        },
+        "PatternConfig": {
+            "properties": {
+                "bars": {
+                    "type": "number"
+                },
+                "events": {
+                    "items": {
+                        "$ref": "#/definitions/PatternEvent"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "bars",
+                "events",
+                "id"
+            ],
+            "type": "object"
+        },
+        "PatternEvent": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/InstrumentOnEvent"
+                },
+                {
+                    "$ref": "#/definitions/StartPatternEvent"
+                }
+            ]
+        },
+        "PhaserEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "phaser",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CPhaserOptions%3E"
+                }
+            ]
+        },
+        "PingPongDelayEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "pingPongDelay",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CPingPongDelayOptions%3E"
+                }
+            ]
+        },
+        "PitchShiftEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "pitchShift",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CPitchShiftOptions%3E"
+                }
+            ]
+        },
+        "RecursivePartial<Omit<FilterOptions,\"context\">>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "Q": {
+                    "type": "number"
+                },
+                "detune": {
+                    "description": "A Cent is 1/100th of a semitone.\ne.g. a value of 50 cents would be halfway between two intervals.",
+                    "type": "number"
+                },
+                "frequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "gain": {
+                    "description": "A number representing the multiplication factor applied to a signal",
+                    "type": "number"
+                },
+                "rolloff": {
+                    "$ref": "#/definitions/FilterRollOff"
+                },
+                "type": {
+                    "$ref": "#/definitions/BiquadFilterType"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<OmniAMCustomOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "harmonicity": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "modulationType": {
+                    "$ref": "#/definitions/AllNonCustomOscillatorType"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "partials": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "type": "array"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "const": "amcustom",
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<OmniAMPartialsOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "harmonicity": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "modulationType": {
+                    "$ref": "#/definitions/AllNonCustomOscillatorType"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/definitions/AMTypeWithPartials"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<OmniAMTypeOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "harmonicity": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "modulationType": {
+                    "$ref": "#/definitions/AllNonCustomOscillatorType"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "partialsCount": {
+                    "type": "number"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "enum": [
+                        "amsawtooth",
+                        "amsine",
+                        "amsquare",
+                        "amtriangle"
+                    ],
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<OmniFMCustomOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "harmonicity": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "modulationIndex": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "modulationType": {
+                    "$ref": "#/definitions/AllNonCustomOscillatorType"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "partials": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "type": "array"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "const": "fmcustom",
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<OmniFMPartialsOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "harmonicity": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "modulationIndex": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "modulationType": {
+                    "$ref": "#/definitions/AllNonCustomOscillatorType"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/definitions/FMTypeWithPartials"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<OmniFMTypeOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "harmonicity": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "modulationIndex": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "modulationType": {
+                    "$ref": "#/definitions/AllNonCustomOscillatorType"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "partialsCount": {
+                    "type": "number"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "enum": [
+                        "fmsawtooth",
+                        "fmsine",
+                        "fmsquare",
+                        "fmtriangle"
+                    ],
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<OmniFatCustomOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "count": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "partials": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "type": "array"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "spread": {
+                    "description": "A Cent is 1/100th of a semitone.\ne.g. a value of 50 cents would be halfway between two intervals.",
+                    "type": "number"
+                },
+                "type": {
+                    "const": "fatcustom",
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<OmniFatPartialsOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "count": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "spread": {
+                    "description": "A Cent is 1/100th of a semitone.\ne.g. a value of 50 cents would be halfway between two intervals.",
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/definitions/FatTypeWithPartials"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<OmniFatTypeOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "count": {
+                    "description": "A number greater than or equal to 0.",
+                    "type": "number"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "partialsCount": {
+                    "type": "number"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "spread": {
+                    "description": "A Cent is 1/100th of a semitone.\ne.g. a value of 50 cents would be halfway between two intervals.",
+                    "type": "number"
+                },
+                "type": {
+                    "enum": [
+                        "fatsawtooth",
+                        "fatsine",
+                        "fatsquare",
+                        "fattriangle"
+                    ],
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<PWMOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "modulationFrequency": {
+                    "$ref": "#/definitions/Frequency"
+                },
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "const": "pwm",
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<PulseOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "const": "pulse",
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                },
+                "width": {
+                    "description": "A number that is between [-1, 1]",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<ToneCustomOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "partials": {
+                    "items": {
+                        "type": "number"
+                    },
+                    "type": "array"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "const": "custom",
+                    "type": "string"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<TonePartialOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/definitions/TypeWithPartials"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmitSourceOptions<ToneTypeOscillatorOptions>>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "properties": {
+                "mute": {
+                    "type": "boolean"
+                },
+                "onstop": {
+                    "$ref": "#/definitions/RecursivePartial%3ConStopCallback%3E"
+                },
+                "partialCount": {
+                    "type": "number"
+                },
+                "phase": {
+                    "description": "Angle between 0 and 360.",
+                    "type": "number"
+                },
+                "type": {
+                    "$ref": "#/definitions/NonCustomOscillatorType"
+                },
+                "volume": {
+                    "description": "A number used to measure the intensity of a sound on a logarithmic scale.",
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "RecursivePartial<OmniOscillatorSynthOptions>": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3CPulseOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3CPWMOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3COmniFatCustomOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3COmniFatTypeOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3COmniFatPartialsOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3COmniFMCustomOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3COmniFMTypeOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3COmniFMPartialsOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3COmniAMCustomOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3COmniAMTypeOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3COmniAMPartialsOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3CToneCustomOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3CToneTypeOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                },
+                {
+                    "$ref": "#/definitions/RecursivePartial%3COmitSourceOptions%3CTonePartialOscillatorOptions%3E%3E",
+                    "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+                }
+            ],
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037"
+        },
+        "RecursivePartial<onStopCallback>": {
+            "description": "Recursive Partial taken from here: https://stackoverflow.com/a/51365037",
+            "type": "object"
+        },
+        "ReverbEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "reverb",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CReverbOptions%3E"
+                }
+            ]
+        },
+        "SequenceEntry": {
+            "properties": {
+                "beat": {
+                    "description": "The beat in the song at which this pattern starts.  Can be fractional.",
+                    "type": "number"
+                },
+                "patternId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "beat",
+                "patternId"
+            ],
+            "type": "object"
+        },
+        "StartPatternEvent": {
+            "properties": {
+                "beat": {
+                    "description": "The beat in the song at which this pattern starts.  Can be fractional.",
+                    "type": "number"
+                },
+                "patternId": {
+                    "type": "string"
+                },
+                "type": {
+                    "const": "StartPattern",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "beat",
+                "patternId",
+                "type"
+            ],
+            "type": "object"
+        },
+        "StereoWidenerEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "stereoWidener",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CStereoWidenerOptions%3E"
+                }
+            ]
+        },
+        "Time": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/TimeObject",
+                    "description": "A time object has a subdivision as the keys and a number as the values."
+                },
+                {
+                    "type": [
+                        "string",
+                        "number"
+                    ]
+                }
+            ],
+            "description": "Time can be described in a number of ways. Read more [Time](https://github.com/Tonejs/Tone.js/wiki/Time).\n* Numbers, which will be taken literally as the time (in seconds).\n* Notation, (\"4n\", \"8t\") describes time in BPM and time signature relative values.\n* TransportTime, (\"4:3:2\") will also provide tempo and time signature relative times in the form BARS:QUARTERS:SIXTEENTHS.\n* Frequency, (\"8hz\") is converted to the length of the cycle in seconds.\n* Now-Relative, (\"+1\") prefix any of the above with \"+\" and it will be interpreted as \"the current time plus whatever expression follows\".\n* Object, ({\"4n\" : 3, \"8t\" : -1}). The resulting time is equal to the sum of all of the keys multiplied by the values in the object.\n* No Argument, for methods which accept time, no argument will be interpreted as \"now\" (i.e. the currentTime)."
+        },
+        "TimeObject": {
+            "description": "A time object has a subdivision as the keys and a number as the values.",
+            "properties": {
+                "0": {
+                    "type": "number"
+                },
+                "128n": {
+                    "type": "number"
+                },
+                "128n.": {
+                    "type": "number"
+                },
+                "128t": {
+                    "type": "number"
+                },
+                "16n": {
+                    "type": "number"
+                },
+                "16n.": {
+                    "type": "number"
+                },
+                "16t": {
+                    "type": "number"
+                },
+                "1m": {
+                    "type": "number"
+                },
+                "1n": {
+                    "type": "number"
+                },
+                "1n.": {
+                    "type": "number"
+                },
+                "256n": {
+                    "type": "number"
+                },
+                "256n.": {
+                    "type": "number"
+                },
+                "256t": {
+                    "type": "number"
+                },
+                "2n": {
+                    "type": "number"
+                },
+                "2n.": {
+                    "type": "number"
+                },
+                "2t": {
+                    "type": "number"
+                },
+                "32n": {
+                    "type": "number"
+                },
+                "32n.": {
+                    "type": "number"
+                },
+                "32t": {
+                    "type": "number"
+                },
+                "4n": {
+                    "type": "number"
+                },
+                "4n.": {
+                    "type": "number"
+                },
+                "4t": {
+                    "type": "number"
+                },
+                "64n": {
+                    "type": "number"
+                },
+                "64n.": {
+                    "type": "number"
+                },
+                "64t": {
+                    "type": "number"
+                },
+                "8n": {
+                    "type": "number"
+                },
+                "8n.": {
+                    "type": "number"
+                },
+                "8t": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "ToneOscillatorType": {
+            "enum": [
+                "custom",
+                "sawtooth",
+                "sawtooth1",
+                "sawtooth10",
+                "sawtooth11",
+                "sawtooth12",
+                "sawtooth13",
+                "sawtooth14",
+                "sawtooth15",
+                "sawtooth16",
+                "sawtooth17",
+                "sawtooth18",
+                "sawtooth19",
+                "sawtooth2",
+                "sawtooth20",
+                "sawtooth21",
+                "sawtooth22",
+                "sawtooth23",
+                "sawtooth24",
+                "sawtooth25",
+                "sawtooth26",
+                "sawtooth27",
+                "sawtooth28",
+                "sawtooth29",
+                "sawtooth3",
+                "sawtooth30",
+                "sawtooth31",
+                "sawtooth32",
+                "sawtooth4",
+                "sawtooth5",
+                "sawtooth6",
+                "sawtooth7",
+                "sawtooth8",
+                "sawtooth9",
+                "sine",
+                "sine1",
+                "sine10",
+                "sine11",
+                "sine12",
+                "sine13",
+                "sine14",
+                "sine15",
+                "sine16",
+                "sine17",
+                "sine18",
+                "sine19",
+                "sine2",
+                "sine20",
+                "sine21",
+                "sine22",
+                "sine23",
+                "sine24",
+                "sine25",
+                "sine26",
+                "sine27",
+                "sine28",
+                "sine29",
+                "sine3",
+                "sine30",
+                "sine31",
+                "sine32",
+                "sine4",
+                "sine5",
+                "sine6",
+                "sine7",
+                "sine8",
+                "sine9",
+                "square",
+                "square1",
+                "square10",
+                "square11",
+                "square12",
+                "square13",
+                "square14",
+                "square15",
+                "square16",
+                "square17",
+                "square18",
+                "square19",
+                "square2",
+                "square20",
+                "square21",
+                "square22",
+                "square23",
+                "square24",
+                "square25",
+                "square26",
+                "square27",
+                "square28",
+                "square29",
+                "square3",
+                "square30",
+                "square31",
+                "square32",
+                "square4",
+                "square5",
+                "square6",
+                "square7",
+                "square8",
+                "square9",
+                "triangle",
+                "triangle1",
+                "triangle10",
+                "triangle11",
+                "triangle12",
+                "triangle13",
+                "triangle14",
+                "triangle15",
+                "triangle16",
+                "triangle17",
+                "triangle18",
+                "triangle19",
+                "triangle2",
+                "triangle20",
+                "triangle21",
+                "triangle22",
+                "triangle23",
+                "triangle24",
+                "triangle25",
+                "triangle26",
+                "triangle27",
+                "triangle28",
+                "triangle29",
+                "triangle3",
+                "triangle30",
+                "triangle31",
+                "triangle32",
+                "triangle4",
+                "triangle5",
+                "triangle6",
+                "triangle7",
+                "triangle8",
+                "triangle9"
+            ],
+            "type": "string"
+        },
+        "TremoloEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "tremolo",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CTremoloOptions%3E"
+                }
+            ]
+        },
+        "TypeWithPartials": {
+            "enum": [
+                "sawtooth1",
+                "sawtooth10",
+                "sawtooth11",
+                "sawtooth12",
+                "sawtooth13",
+                "sawtooth14",
+                "sawtooth15",
+                "sawtooth16",
+                "sawtooth17",
+                "sawtooth18",
+                "sawtooth19",
+                "sawtooth2",
+                "sawtooth20",
+                "sawtooth21",
+                "sawtooth22",
+                "sawtooth23",
+                "sawtooth24",
+                "sawtooth25",
+                "sawtooth26",
+                "sawtooth27",
+                "sawtooth28",
+                "sawtooth29",
+                "sawtooth3",
+                "sawtooth30",
+                "sawtooth31",
+                "sawtooth32",
+                "sawtooth4",
+                "sawtooth5",
+                "sawtooth6",
+                "sawtooth7",
+                "sawtooth8",
+                "sawtooth9",
+                "sine1",
+                "sine10",
+                "sine11",
+                "sine12",
+                "sine13",
+                "sine14",
+                "sine15",
+                "sine16",
+                "sine17",
+                "sine18",
+                "sine19",
+                "sine2",
+                "sine20",
+                "sine21",
+                "sine22",
+                "sine23",
+                "sine24",
+                "sine25",
+                "sine26",
+                "sine27",
+                "sine28",
+                "sine29",
+                "sine3",
+                "sine30",
+                "sine31",
+                "sine32",
+                "sine4",
+                "sine5",
+                "sine6",
+                "sine7",
+                "sine8",
+                "sine9",
+                "square1",
+                "square10",
+                "square11",
+                "square12",
+                "square13",
+                "square14",
+                "square15",
+                "square16",
+                "square17",
+                "square18",
+                "square19",
+                "square2",
+                "square20",
+                "square21",
+                "square22",
+                "square23",
+                "square24",
+                "square25",
+                "square26",
+                "square27",
+                "square28",
+                "square29",
+                "square3",
+                "square30",
+                "square31",
+                "square32",
+                "square4",
+                "square5",
+                "square6",
+                "square7",
+                "square8",
+                "square9",
+                "triangle1",
+                "triangle10",
+                "triangle11",
+                "triangle12",
+                "triangle13",
+                "triangle14",
+                "triangle15",
+                "triangle16",
+                "triangle17",
+                "triangle18",
+                "triangle19",
+                "triangle2",
+                "triangle20",
+                "triangle21",
+                "triangle22",
+                "triangle23",
+                "triangle24",
+                "triangle25",
+                "triangle26",
+                "triangle27",
+                "triangle28",
+                "triangle29",
+                "triangle3",
+                "triangle30",
+                "triangle31",
+                "triangle32",
+                "triangle4",
+                "triangle5",
+                "triangle6",
+                "triangle7",
+                "triangle8",
+                "triangle9"
+            ],
+            "type": "string"
+        },
+        "VibratoEffectConfig": {
+            "allOf": [
+                {
+                    "properties": {
+                        "name": {
+                            "const": "vibrato",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "name"
+                    ],
+                    "type": "object"
+                },
+                {
+                    "$ref": "#/definitions/OmitContext%3CVibratoOptions%3E"
+                }
+            ]
+        }
+    },
+    "properties": {
+        "beatsPerBar": {
+            "description": "Number of beats in each bar.  Produces the time signature.  If 4 then 4/4 time.  If 3 then 3/4 time.",
+            "type": "number"
+        },
+        "bpm": {
+            "description": "Tempo in beats per minute.",
+            "type": "number"
+        },
+        "channels": {
+            "description": "Defines each individual channel in the song",
+            "items": {
+                "$ref": "#/definitions/ChannelConfig"
+            },
+            "type": "array"
+        },
+        "instruments": {
+            "items": {
+                "$ref": "#/definitions/Instrument"
+            },
+            "type": "array"
+        },
+        "loop": {
+            "type": "boolean"
+        },
+        "masterChannel": {
+            "$ref": "#/definitions/Omit%3CChannelConfig%2C%22id%22%3E",
+            "description": "All effects applied to the master output"
+        },
+        "patterns": {
+            "items": {
+                "$ref": "#/definitions/PatternConfig"
+            },
+            "type": "array"
+        },
+        "sequence": {
+            "items": {
+                "$ref": "#/definitions/SequenceEntry"
+            },
+            "type": "array"
+        },
+        "title": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "beatsPerBar",
+        "bpm",
+        "channels",
+        "instruments",
+        "masterChannel",
+        "patterns",
+        "sequence"
+    ],
+    "type": "object"
+}
+

@@ -1,0 +1,104 @@
+<div class="bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 p-6">
+  <h2 class="text-2xl font-bold text-white mb-4">Timeline</h2>
+  
+  <div class="relative overflow-hidden h-96">
+    <div 
+      class="absolute inset-0 overflow-x-auto"
+      #scrollContainer
+    >
+      <!-- Sticky tick row: stays visible when scrolling vertically -->
+      <div class="sticky top-0 z-30 pointer-events-none py-1 h-6 bg-black/25" [style.width.px]="timelineWidth()">
+        <div class="relative " [style.width.px]="timelineWidth()">
+          @for (beat of beatMarkers(); track beat) {
+            @let barStart = beat % song().beatsPerBar === 0;
+            <div class="absolute text-center" [style.left.px]="beat * beatWidth">
+              <div class="w-px mx-auto"
+                [class.bg-white/10]="!barStart"
+                [class.bg-white/30]="barStart"
+                [class.h-3]="!barStart"
+                [class.h-4]="barStart"
+              ></div>
+              @if (barStart) {
+                @let bar = beat / song().beatsPerBar;
+                <div class="absolute top-0 left-1 text-xs text-white font-mono">{{ bar + 0 }}</div>
+              }
+            </div>
+          }
+        </div>
+      </div>
+
+      <div class="relative" [style.width.px]="timelineWidth()" >
+        <!-- Beat ticks -->
+        <div class="absolute left-0 right-0 bottom-0 pointer-events-none z-10">
+          @for (beat of beatMarkers(); track beat) {
+            @let barStart = beat % song().beatsPerBar === 0;
+            <div
+              class="absolute top-0 bottom-0 w-px"
+              [style.left.px]="beat * beatWidth"
+              [class.bg-white/10]="!barStart"
+              [class.bg-white/30]="barStart"
+            ></div>
+          }
+        </div>
+        <!-- Playhead: span from tick row top down to bottom -->
+        <div
+          #playHead
+          class="absolute top-0 bottom-0 w-0.5 bg-red-500/50 z-20 transition-all duration-75"
+          [style.left.px]="playheadPosition()"
+        >
+        </div>
+        <!-- Channel rows -->
+        @for (channel of channels(); track channel.id; let idx = $index) {
+          <div 
+            class="relative border-b border-white/20 w-full"
+            [style.height.px]="rowHeight"
+
+          >
+            <!-- Channel label -->
+            <div class="sticky left-0 inline-block bg-slate-800/90 px-3 py-1 rounded text-white font-mono text-sm z-10">
+              {{ channel.id }}
+            </div>
+            
+            <!-- Events for this channel -->
+            @for (event of channelEvents()[channel.id]; track $index) {
+              <div
+                class="absolute rounded shadow-lg flex items-center justify-center text-xs font-mono overflow-hidden"
+                [class.border]="!event.isNested"
+                [class.border-white/30]="!event.isNested"
+                [style.left.px]="event.startBeat * beatWidth"
+                [style.width.px]="event.duration * beatWidth"
+                [style.top.px]="event.isNested ? (rowHeight - (rowHeight / 4) - 4) : 4"
+                [style.height.px]="event.isNested ? (rowHeight / 4) : (rowHeight - 8)"
+                [style.backgroundColor]="event.color"
+                [style.color]="getTextColor(event.color)"
+                [style.opacity]="event.isNested ? 0.7 : 1"
+                [title]="event.type === 'instrument' ? (event.note + ' - ' + event.instrumentId) : ('Pattern: ' + event.patternId)"
+              >
+                <span class="truncate px-1">{{ event.note }}</span>
+              </div>
+            }
+          </div>
+        }
+        
+
+      </div>
+    </div>
+  </div>
+  
+  <!-- Legend -->
+  <div class="mt-4 flex flex-wrap gap-3">
+    @for (instrument of instruments(); track instrument.id) {
+      <div class="flex items-center gap-2">
+        <div 
+          class="w-4 h-4 rounded border border-white/30"
+          [style.backgroundColor]="getInstrumentColor(instrument.id)"
+        ></div>
+        <span class="text-white text-sm">{{ instrument.id }}</span>
+      </div>
+    }
+    <div class="flex items-center gap-2">
+      <div class="w-4 h-4 rounded bg-yellow-400"></div>
+      <span class="text-white text-sm">Pattern</span>
+    </div>
+  </div>
+</div>

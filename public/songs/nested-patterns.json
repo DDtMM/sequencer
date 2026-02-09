@@ -1,0 +1,132 @@
+{
+  "$schema": "./song.schema.json",
+  "title": "Nested Patterns Demo",
+  "bpm": 120,
+  "beatsPerBar": 4,
+  "loop": true,
+  "masterChannel": {
+    "id": "master",
+    "effects": []
+  },
+  "channels": [
+    {
+      "id": "drums",
+      "pan": -0.1,
+      "effects": []
+    },
+    {
+      "id": "melody",
+      "pan": 0.1,
+      "effects": [
+        {
+          "name": "delay",
+          "delayTime": "8n",
+          "feedback": 0.3
+        }
+      ]
+    }
+  ],
+  "instruments": [
+    {
+      "id": "kick",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "sine"
+          },
+          "envelope": {
+            "a": 0.001,
+            "d": 0.2,
+            "s": 0,
+            "r": 0.01
+          }
+        }
+      ]
+    },
+    {
+      "id": "hihat",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "square"
+          },
+          "envelope": {
+            "a": 0.001,
+            "d": 0.05,
+            "s": 0,
+            "r": 0.01
+          }
+        }
+      ]
+    },
+    {
+      "id": "synth",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "triangle"
+          },
+          "envelope": {
+            "a": 0.25,
+            "d": 0.1,
+            "s": 1,
+            "r": 1
+          }
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "kick-hihat-combo",
+      "bars": 1,
+      "events": [
+        { "type": "InstrumentOn", "instrumentId": "kick", "channelId": "drums", "note": "C1", "velocity": 1.0, "duration": 0.25, "beat": 0 },
+        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.6, "duration": 0.125, "beat": 0.5 },
+        { "type": "InstrumentOn", "instrumentId": "kick", "channelId": "drums", "note": "C1", "velocity": 1.0, "duration": 0.25, "beat": 2 },
+        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.6, "duration": 0.125, "beat": 2.5 }
+      ]
+    },
+    {
+      "id": "hihat-fill",
+      "bars": 0.5,
+      "events": [
+        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.8, "duration": 0.125, "beat": 0 },
+        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.6, "duration": 0.125, "beat": 0.5 },
+        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.8, "duration": 0.125, "beat": 1 },
+        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.9, "duration": 0.125, "beat": 1.5 }
+      ]
+    },
+    {
+      "id": "drum-pattern",
+      "bars": 4,
+      "events": [
+        { "type": "StartPattern", "patternId": "kick-hihat-combo", "beat": 0 },
+        { "type": "StartPattern", "patternId": "kick-hihat-combo", "beat": 4 },
+        { "type": "StartPattern", "patternId": "kick-hihat-combo", "beat": 8 },
+        { "type": "StartPattern", "patternId": "kick-hihat-combo", "beat": 12 },
+        { "type": "StartPattern", "patternId": "hihat-fill", "beat": 14 }
+      ]
+    },
+    {
+      "id": "melody-pattern",
+      "bars": 4,
+      "events": [
+        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "C4", "velocity": 0.7, "duration": 1, "beat": 0 },
+        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "E4", "velocity": 0.7, "duration": 1, "beat": 2 },
+        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "G4", "velocity": 0.7, "duration": 1, "beat": 4 },
+        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "E4", "velocity": 0.7, "duration": 1, "beat": 6 },
+        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "D4", "velocity": 0.7, "duration": 1, "beat": 8 },
+        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "F4", "velocity": 0.7, "duration": 1, "beat": 10 },
+        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "A4", "velocity": 0.8, "duration": 2, "beat": 12 }
+      ]
+    }
+  ],
+  "sequence": [
+    { "patternId": "drum-pattern", "beat": 0 },
+    { "patternId": "melody-pattern", "beat": 0 }
+  ]
+}

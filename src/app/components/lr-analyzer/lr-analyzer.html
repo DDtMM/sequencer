@@ -1,0 +1,23 @@
+<div class="analyzer-container">
+  <div class="channel">
+    <div class="label">L</div>
+    <div class="meter-track">
+      <div 
+        class="meter-fill left"
+        [style.width.%]="leftLevel()"
+      ></div>
+    </div>
+    <div class="value">{{ leftLevel().toFixed(0) }}%</div>
+  </div>
+  
+  <div class="channel">
+    <div class="label">R</div>
+    <div class="meter-track">
+      <div 
+        class="meter-fill right"
+        [style.width.%]="rightLevel()"
+      ></div>
+    </div>
+    <div class="value">{{ rightLevel().toFixed(0) }}%</div>
+  </div>
+</div>

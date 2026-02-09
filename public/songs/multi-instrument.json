@@ -1,0 +1,256 @@
+{
+  "$schema": "./song.schema.json",
+  "title": "Multi-Instrument Groove",
+  "bpm": 110,
+  "beatsPerBar": 4,
+  "masterChannel": {
+    "id": "master",
+    "effects": [
+      {
+        "name": "reverb",
+        "decay": 2.0
+      }
+    ]
+  },
+  "channels": [
+    {
+      "id": "bass",
+      "pan": -0.3,
+      "effects": [
+        {
+          "name": "filter",
+          "frequency": 800,
+          "type": "lowpass"
+        }
+      ]
+    },
+    {
+      "id": "lead",
+      "pan": 0.3,
+      "effects": [
+        {
+          "name": "delay",
+          "delayTime": "8n",
+          "feedback": 0.3
+        }
+      ]
+    },
+    {
+      "id": "pad",
+      "effects": [
+        {
+          "name": "chorus",
+          "frequency": 1.5,
+          "delayTime": 3.5,
+          "depth": 0.7
+        }
+      ]
+    }
+  ],
+  "instruments": [
+    {
+      "id": "bass",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "sawtooth"
+          },
+          "envelope": {
+            "a": 0.01,
+            "d": 0.2,
+            "s": 0.3,
+            "r": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "lead",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "square"
+          },
+          "envelope": {
+            "a": 0.005,
+            "d": 0.1,
+            "s": 0.6,
+            "r": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "pad",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "sine"
+          },
+          "envelope": {
+            "a": 0.8,
+            "d": 0.2,
+            "s": 0.2,
+            "r": 0
+          }
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "bassline",
+      "events": [
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "bass",
+          "channelId": "bass",
+          "note": "C2",
+          "velocity": 0.9,
+          "duration": 0.5,
+          "beat": 0
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "bass",
+          "channelId": "bass",
+          "note": "C2",
+          "velocity": 0.7,
+          "duration": 0.5,
+          "beat": 1
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "bass",
+          "channelId": "bass",
+          "note": "G2",
+          "velocity": 0.9,
+          "duration": 0.5,
+          "beat": 2
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "bass",
+          "channelId": "bass",
+          "note": "C2",
+          "velocity": 0.7,
+          "duration": 0.5,
+          "beat": 3
+        }
+      ],
+      "bars": 1
+    },
+    {
+      "id": "leadmelody",
+      "events": [
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "lead",
+          "channelId": "lead",
+          "note": "C5",
+          "velocity": 0.7,
+          "duration": 0.5,
+          "beat": 0
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "lead",
+          "channelId": "lead",
+          "note": "D5",
+          "velocity": 0.7,
+          "duration": 0.5,
+          "beat": 0.5
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "lead",
+          "channelId": "lead",
+          "note": "E5",
+          "velocity": 0.8,
+          "duration": 0.5,
+          "beat": 1
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "lead",
+          "channelId": "lead",
+          "note": "G5",
+          "velocity": 0.8,
+          "duration": 1.75,
+          "beat": 2
+        }
+      ],
+      "bars": 1
+    },
+    {
+      "id": "padchord",
+      "events": [
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "pad",
+          "channelId": "pad",
+          "note": "C3",
+          "velocity": 0.4,
+          "duration": 4,
+          "beat": 0
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "pad",
+          "channelId": "pad",
+          "note": "E3",
+          "velocity": 0.4,
+          "duration": 4,
+          "beat": 0
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "pad",
+          "channelId": "pad",
+          "note": "G3",
+          "velocity": 0.4,
+          "duration": 4,
+          "beat": 0
+        }
+      ],
+      "bars": 1
+    }
+  ],
+  "sequence": [
+    {
+      "patternId": "bassline",
+      "beat": 0
+    },
+    {
+      "patternId": "bassline",
+      "beat": 4
+    },
+    {
+      "patternId": "bassline",
+      "beat": 8
+    },
+    {
+      "patternId": "bassline",
+      "beat": 12
+    },
+    {
+      "patternId": "leadmelody",
+      "beat": 4
+    },
+    {
+      "patternId": "leadmelody",
+      "beat": 12
+    },
+    {
+      "patternId": "padchord",
+      "beat": 0
+    },
+    {
+      "patternId": "padchord",
+      "beat": 8
+    }
+  ]
+}

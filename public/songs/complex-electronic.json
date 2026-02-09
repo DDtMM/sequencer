@@ -1,0 +1,339 @@
+{
+  "$schema": "./song.schema.json",
+  "title": "Complex Electronic",
+  "bpm": 128,
+  "beatsPerBar": 4,
+  "masterChannel": {
+    "id": "master",
+    "effects": [
+      {
+        "name": "reverb",
+        "decay": 3.0
+      }
+    ]
+  },
+  "channels": [
+    {
+      "id": "kick",
+      "effects": [
+        {
+          "name": "distortion",
+          "distortion": 0.3
+        }
+      ]
+    },
+    {
+      "id": "melody",
+      "pan": 0.2,
+      "effects": [
+        {
+          "name": "delay",
+          "delayTime": "16n",
+          "feedback": 0.4
+        },
+        {
+          "name": "filter",
+          "frequency": 2000,
+          "type": "highpass"
+        }
+      ]
+    },
+    {
+      "id": "arp",
+      "pan": -0.2,
+      "effects": [
+        {
+          "name": "chorus",
+          "frequency": 2.0,
+          "delayTime": 2.5,
+          "depth": 0.5
+        }
+      ]
+    }
+  ],
+  "instruments": [
+    {
+      "id": "kick",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "sine"
+          },
+          "envelope": {
+            "a": 0.001,
+            "d": 0.5,
+            "s": 0,
+            "r": 0
+          },
+          "effects": [
+            {
+              "name": "bitCrusher",
+              "bits": 4,
+              "wet": 0.5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "melody",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "triangle"
+          },
+          "envelope": {
+            "a": 0.02,
+            "d": 0.15,
+            "s": 0.4,
+            "r": 0.3
+          },
+          "effects": [
+            {
+              "name": "distortion",
+              "distortion": 1,
+              "wet": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arp",
+      "generators": [
+        {
+          "type": "oscillator",
+          "oscillator": {
+            "type": "square"
+          },
+          "envelope": {
+            "a": 0.005,
+            "d": 0.05,
+            "s": 0.2,
+            "r": 0.1
+          }
+        }
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "kickpattern",
+      "events": [
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "kick",
+          "channelId": "kick",
+          "note": "C1",
+          "velocity": 1.0,
+          "duration": 0.25,
+          "beat": 0
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "kick",
+          "channelId": "kick",
+          "note": "C1",
+          "velocity": 1.0,
+          "duration": 0.25,
+          "beat": 1
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "kick",
+          "channelId": "kick",
+          "note": "C1",
+          "velocity": 1.0,
+          "duration": 0.25,
+          "beat": 2
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "kick",
+          "channelId": "kick",
+          "note": "C1",
+          "velocity": 1.0,
+          "duration": 0.25,
+          "beat": 3
+        }
+      ],
+      "bars": 1
+    },
+    {
+      "id": "melodymain",
+      "events": [
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "melody",
+          "channelId": "melody",
+          "note": "A4",
+          "velocity": 0.8,
+          "duration": 1.5,
+          "beat": 0
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "melody",
+          "channelId": "melody",
+          "note": "G4",
+          "velocity": 0.7,
+          "duration": 0.5,
+          "beat": 1.5
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "melody",
+          "channelId": "melody",
+          "note": "F4",
+          "velocity": 0.75,
+          "duration": 1,
+          "beat": 2
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "melody",
+          "channelId": "melody",
+          "note": "E4",
+          "velocity": 0.8,
+          "duration": 1,
+          "beat": 3
+        }
+      ],
+      "bars": 1
+    },
+    {
+      "id": "arppattern",
+      "events": [
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "arp",
+          "channelId": "arp",
+          "note": "C4",
+          "velocity": 0.6,
+          "duration": 0.25,
+          "beat": 0
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "arp",
+          "channelId": "arp",
+          "note": "E4",
+          "velocity": 0.6,
+          "duration": 0.25,
+          "beat": 0.25
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "arp",
+          "channelId": "arp",
+          "note": "G4",
+          "velocity": 0.6,
+          "duration": 0.25,
+          "beat": 0.5
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "arp",
+          "channelId": "arp",
+          "note": "C5",
+          "velocity": 0.6,
+          "duration": 0.25,
+          "beat": 0.75
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "arp",
+          "channelId": "arp",
+          "note": "G4",
+          "velocity": 0.6,
+          "duration": 0.25,
+          "beat": 1
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "arp",
+          "channelId": "arp",
+          "note": "E4",
+          "velocity": 0.6,
+          "duration": 0.25,
+          "beat": 1.25
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "arp",
+          "channelId": "arp",
+          "note": "C4",
+          "velocity": 0.6,
+          "duration": 0.25,
+          "beat": 1.5
+        },
+        {
+          "type": "InstrumentOn",
+          "instrumentId": "arp",
+          "channelId": "arp",
+          "note": "E4",
+          "velocity": 0.6,
+          "duration": 0.25,
+          "beat": 1.75
+        }
+      ],
+      "bars": 1
+    }
+  ],
+  "sequence": [
+    {
+      "patternId": "kickpattern",
+      "beat": 0
+    },
+    {
+      "patternId": "kickpattern",
+      "beat": 4
+    },
+    {
+      "patternId": "kickpattern",
+      "beat": 8
+    },
+    {
+      "patternId": "kickpattern",
+      "beat": 12
+    },
+    {
+      "patternId": "kickpattern",
+      "beat": 16
+    },
+    {
+      "patternId": "kickpattern",
+      "beat": 20
+    },
+    {
+      "patternId": "melodymain",
+      "beat": 4
+    },
+    {
+      "patternId": "melodymain",
+      "beat": 12
+    },
+    {
+      "patternId": "melodymain",
+      "beat": 20
+    },
+    {
+      "patternId": "arppattern",
+      "beat": 8
+    },
+    {
+      "patternId": "arppattern",
+      "beat": 10
+    },
+    {
+      "patternId": "arppattern",
+      "beat": 16
+    },
+    {
+      "patternId": "arppattern",
+      "beat": 18
+    }
+  ]
+}
