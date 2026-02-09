@@ -61,6 +61,8 @@ export function buildInstrument(config: Instrument): InstrumentNode {
   };
   
   // Create separate release trigger function
+  // Note: ToneJS doesn't currently use velocity for release, but we keep it in the signature
+  // for API consistency and future compatibility
   const triggerRelease = (note: Tone.Unit.Frequency, time: Tone.Unit.Time, velocity: number) => {
     polySynths.forEach(polySynth => {
       polySynth.triggerRelease(note, time as number);

@@ -1018,7 +1018,7 @@
         },
         {
           "type": "NoteOff",
-          "beat": 6.199999999999999,
+          "beat": 6.2,
           "channelId": "clap",
           "instrumentId": "clap",
           "note": "C3",

@@ -293,7 +293,7 @@ export class SequencerService {
 
     const absoluteBeat = beat + event.beat;
     
-    // Convert beat to bars:beats:sixteenths notation
+    // Convert beat to time offset for note release
     const timeOffset = beatsToTime(absoluteBeat, this.song!.beatsPerBar);
 
     const eventId = Tone.getTransport().schedule((time) => {
