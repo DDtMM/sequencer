@@ -30,7 +30,7 @@
                 "input": "public"
               },
               {
-                "glob": "404.md",
+                "glob": "**/404.md",
                 "input": "src",
                 "output": "/"
               }
