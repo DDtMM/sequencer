@@ -104,7 +104,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
 
     try {
       console.log('Loading song:', songId);
-      const songData = await this.http.get<SongConfig>(`/songs/${songId}.json`).toPromise();
+      const songData = await this.http.get<SongConfig>(`songs/${songId}.json`).toPromise();
       if (!songData) {
         throw new Error('Failed to load song');
       }
