@@ -84,49 +84,300 @@
       "id": "kick-hihat-combo",
       "bars": 1,
       "events": [
-        { "type": "InstrumentOn", "instrumentId": "kick", "channelId": "drums", "note": "C1", "velocity": 1.0, "duration": 0.25, "beat": 0 },
-        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.6, "duration": 0.125, "beat": 0.5 },
-        { "type": "InstrumentOn", "instrumentId": "kick", "channelId": "drums", "note": "C1", "velocity": 1.0, "duration": 0.25, "beat": 2 },
-        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.6, "duration": 0.125, "beat": 2.5 }
+        {
+          "type": "NoteOn",
+          "beat": 0,
+          "channelId": "drums",
+          "instrumentId": "kick",
+          "note": "C1",
+          "velocity": 1
+        },
+        {
+          "type": "NoteOff",
+          "beat": 0.25,
+          "channelId": "drums",
+          "instrumentId": "kick",
+          "note": "C1",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 0.5,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.6
+        },
+        {
+          "type": "NoteOff",
+          "beat": 0.625,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 2,
+          "channelId": "drums",
+          "instrumentId": "kick",
+          "note": "C1",
+          "velocity": 1
+        },
+        {
+          "type": "NoteOff",
+          "beat": 2.25,
+          "channelId": "drums",
+          "instrumentId": "kick",
+          "note": "C1",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 2.5,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.6
+        },
+        {
+          "type": "NoteOff",
+          "beat": 2.625,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.5
+        }
       ]
     },
     {
       "id": "hihat-fill",
       "bars": 0.5,
       "events": [
-        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.8, "duration": 0.125, "beat": 0 },
-        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.6, "duration": 0.125, "beat": 0.5 },
-        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.8, "duration": 0.125, "beat": 1 },
-        { "type": "InstrumentOn", "instrumentId": "hihat", "channelId": "drums", "note": "F#5", "velocity": 0.9, "duration": 0.125, "beat": 1.5 }
+        {
+          "type": "NoteOn",
+          "beat": 0,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.8
+        },
+        {
+          "type": "NoteOff",
+          "beat": 0.125,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 0.5,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.6
+        },
+        {
+          "type": "NoteOff",
+          "beat": 0.625,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 1,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.8
+        },
+        {
+          "type": "NoteOff",
+          "beat": 1.125,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 1.5,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.9
+        },
+        {
+          "type": "NoteOff",
+          "beat": 1.625,
+          "channelId": "drums",
+          "instrumentId": "hihat",
+          "note": "F#5",
+          "velocity": 0.5
+        }
       ]
     },
     {
       "id": "drum-pattern",
       "bars": 4,
       "events": [
-        { "type": "StartPattern", "patternId": "kick-hihat-combo", "beat": 0 },
-        { "type": "StartPattern", "patternId": "kick-hihat-combo", "beat": 4 },
-        { "type": "StartPattern", "patternId": "kick-hihat-combo", "beat": 8 },
-        { "type": "StartPattern", "patternId": "kick-hihat-combo", "beat": 12 },
-        { "type": "StartPattern", "patternId": "hihat-fill", "beat": 14 }
+        {
+          "type": "PatternOn",
+          "beat": 0,
+          "patternId": "kick-hihat-combo"
+        },
+        {
+          "type": "PatternOn",
+          "beat": 4,
+          "patternId": "kick-hihat-combo"
+        },
+        {
+          "type": "PatternOn",
+          "beat": 8,
+          "patternId": "kick-hihat-combo"
+        },
+        {
+          "type": "PatternOn",
+          "beat": 12,
+          "patternId": "kick-hihat-combo"
+        },
+        {
+          "type": "PatternOn",
+          "beat": 14,
+          "patternId": "hihat-fill"
+        }
       ]
     },
     {
       "id": "melody-pattern",
       "bars": 4,
       "events": [
-        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "C4", "velocity": 0.7, "duration": 1, "beat": 0 },
-        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "E4", "velocity": 0.7, "duration": 1, "beat": 2 },
-        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "G4", "velocity": 0.7, "duration": 1, "beat": 4 },
-        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "E4", "velocity": 0.7, "duration": 1, "beat": 6 },
-        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "D4", "velocity": 0.7, "duration": 1, "beat": 8 },
-        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "F4", "velocity": 0.7, "duration": 1, "beat": 10 },
-        { "type": "InstrumentOn", "instrumentId": "synth", "channelId": "melody", "note": "A4", "velocity": 0.8, "duration": 2, "beat": 12 }
+        {
+          "type": "NoteOn",
+          "beat": 0,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "C4",
+          "velocity": 0.7
+        },
+        {
+          "type": "NoteOff",
+          "beat": 1,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "C4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 2,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "E4",
+          "velocity": 0.7
+        },
+        {
+          "type": "NoteOff",
+          "beat": 3,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "E4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 4,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "G4",
+          "velocity": 0.7
+        },
+        {
+          "type": "NoteOff",
+          "beat": 5,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "G4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 6,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "E4",
+          "velocity": 0.7
+        },
+        {
+          "type": "NoteOff",
+          "beat": 7,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "E4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 8,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "D4",
+          "velocity": 0.7
+        },
+        {
+          "type": "NoteOff",
+          "beat": 9,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "D4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 10,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "F4",
+          "velocity": 0.7
+        },
+        {
+          "type": "NoteOff",
+          "beat": 11,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "F4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 12,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "A4",
+          "velocity": 0.8
+        },
+        {
+          "type": "NoteOff",
+          "beat": 14,
+          "channelId": "melody",
+          "instrumentId": "synth",
+          "note": "A4",
+          "velocity": 0.5
+        }
       ]
     }
   ],
   "sequence": [
-    { "patternId": "drum-pattern", "beat": 0 },
-    { "patternId": "melody-pattern", "beat": 0 }
+    {
+      "patternId": "drum-pattern",
+      "beat": 0
+    },
+    {
+      "patternId": "melody-pattern",
+      "beat": 0
+    }
   ]
 }

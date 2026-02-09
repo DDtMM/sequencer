@@ -8,7 +8,7 @@
     "effects": [
       {
         "name": "reverb",
-        "decay": 2.0,
+        "decay": 2,
         "wet": 0.2
       }
     ]
@@ -98,120 +98,197 @@
   "patterns": [
     {
       "id": "bassline",
+      "bars": 1,
       "events": [
         {
-          "type": "InstrumentOn",
-          "instrumentId": "bass",
+          "type": "NoteOn",
+          "beat": 0,
           "channelId": "bass",
+          "instrumentId": "bass",
           "note": "C2",
-          "velocity": 0.9,
-          "duration": 0.5,
-          "beat": 0
+          "velocity": 0.9
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "bass",
+          "type": "NoteOff",
+          "beat": 0.5,
           "channelId": "bass",
+          "instrumentId": "bass",
           "note": "C2",
-          "velocity": 0.7,
-          "duration": 0.5,
-          "beat": 1
+          "velocity": 0.5
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "bass",
+          "type": "NoteOn",
+          "beat": 1,
           "channelId": "bass",
+          "instrumentId": "bass",
+          "note": "C2",
+          "velocity": 0.7
+        },
+        {
+          "type": "NoteOff",
+          "beat": 1.5,
+          "channelId": "bass",
+          "instrumentId": "bass",
+          "note": "C2",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 2,
+          "channelId": "bass",
+          "instrumentId": "bass",
           "note": "G2",
-          "velocity": 0.9,
-          "duration": 0.5,
-          "beat": 2
+          "velocity": 0.9
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "bass",
+          "type": "NoteOff",
+          "beat": 2.5,
           "channelId": "bass",
+          "instrumentId": "bass",
+          "note": "G2",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 3,
+          "channelId": "bass",
+          "instrumentId": "bass",
           "note": "C2",
-          "velocity": 0.7,
-          "duration": 0.5,
-          "beat": 3
+          "velocity": 0.7
+        },
+        {
+          "type": "NoteOff",
+          "beat": 3.5,
+          "channelId": "bass",
+          "instrumentId": "bass",
+          "note": "C2",
+          "velocity": 0.5
         }
-      ],
-      "bars": 1
+      ]
     },
     {
       "id": "leadmelody",
+      "bars": 1,
       "events": [
         {
-          "type": "InstrumentOn",
-          "instrumentId": "lead",
+          "type": "NoteOn",
+          "beat": 0,
           "channelId": "lead",
+          "instrumentId": "lead",
           "note": "C5",
-          "velocity": 0.7,
-          "duration": 0.5,
-          "beat": 0
+          "velocity": 0.7
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "lead",
+          "type": "NoteOff",
+          "beat": 0.5,
           "channelId": "lead",
+          "instrumentId": "lead",
+          "note": "C5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 0.5,
+          "channelId": "lead",
+          "instrumentId": "lead",
           "note": "D5",
-          "velocity": 0.7,
-          "duration": 0.5,
-          "beat": 0.5
+          "velocity": 0.7
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "lead",
+          "type": "NoteOff",
+          "beat": 1,
           "channelId": "lead",
+          "instrumentId": "lead",
+          "note": "D5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 1,
+          "channelId": "lead",
+          "instrumentId": "lead",
           "note": "E5",
-          "velocity": 0.8,
-          "duration": 0.5,
-          "beat": 1
+          "velocity": 0.8
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "lead",
+          "type": "NoteOff",
+          "beat": 1.5,
           "channelId": "lead",
+          "instrumentId": "lead",
+          "note": "E5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 2,
+          "channelId": "lead",
+          "instrumentId": "lead",
           "note": "G5",
-          "velocity": 0.8,
-          "duration": 1.75,
-          "beat": 2
+          "velocity": 0.8
+        },
+        {
+          "type": "NoteOff",
+          "beat": 3.75,
+          "channelId": "lead",
+          "instrumentId": "lead",
+          "note": "G5",
+          "velocity": 0.5
         }
-      ],
-      "bars": 1
+      ]
     },
     {
       "id": "padchord",
+      "bars": 1,
       "events": [
         {
-          "type": "InstrumentOn",
-          "instrumentId": "pad",
+          "type": "NoteOn",
+          "beat": 0,
           "channelId": "pad",
+          "instrumentId": "pad",
           "note": "C3",
-          "velocity": 0.4,
-          "duration": 4,
-          "beat": 0
+          "velocity": 0.4
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "pad",
+          "type": "NoteOn",
+          "beat": 0,
           "channelId": "pad",
+          "instrumentId": "pad",
           "note": "E3",
-          "velocity": 0.4,
-          "duration": 4,
-          "beat": 0
+          "velocity": 0.4
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "pad",
+          "type": "NoteOn",
+          "beat": 0,
           "channelId": "pad",
+          "instrumentId": "pad",
           "note": "G3",
-          "velocity": 0.4,
-          "duration": 4,
-          "beat": 0
+          "velocity": 0.4
+        },
+        {
+          "type": "NoteOff",
+          "beat": 4,
+          "channelId": "pad",
+          "instrumentId": "pad",
+          "note": "C3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOff",
+          "beat": 4,
+          "channelId": "pad",
+          "instrumentId": "pad",
+          "note": "E3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOff",
+          "beat": 4,
+          "channelId": "pad",
+          "instrumentId": "pad",
+          "note": "G3",
+          "velocity": 0.5
         }
-      ],
-      "bars": 1
+      ]
     }
   ],
   "sequence": [

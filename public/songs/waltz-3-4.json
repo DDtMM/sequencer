@@ -9,7 +9,7 @@
     "effects": [
       {
         "name": "reverb",
-        "decay": 2.0,
+        "decay": 2,
         "wet": 0.2
       }
     ]
@@ -21,7 +21,7 @@
       "pan": -0.5,
       "volume": -3
     },
-      {
+    {
       "id": "ch2",
       "effects": [
         {
@@ -34,7 +34,6 @@
       "volume": -3
     }
   ],
-  
   "instruments": [
     {
       "id": "waltzPiano",
@@ -60,67 +59,116 @@
       "bars": 4,
       "events": [
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOn",
+          "beat": 0,
           "channelId": "ch1",
+          "instrumentId": "waltzPiano",
           "note": "C5",
-          "velocity": 0.9,
-          "duration": 2.5,
-          "beat": 0
+          "velocity": 0.9
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 2.5,
           "channelId": "ch1",
+          "instrumentId": "waltzPiano",
+          "note": "C5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 3,
+          "channelId": "ch1",
+          "instrumentId": "waltzPiano",
           "note": "E5",
-          "velocity": 0.7,
-          "duration": 0.5,
-          "beat": 3
+          "velocity": 0.7
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 3.5,
           "channelId": "ch1",
+          "instrumentId": "waltzPiano",
+          "note": "E5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 3.5,
+          "channelId": "ch1",
+          "instrumentId": "waltzPiano",
           "note": "G5",
-          "velocity": 0.8,
-          "duration": 2.5,
-          "beat": 3.5
+          "velocity": 0.8
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 6,
           "channelId": "ch1",
+          "instrumentId": "waltzPiano",
+          "note": "G5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 6,
+          "channelId": "ch1",
+          "instrumentId": "waltzPiano",
           "note": "F5",
-          "velocity": 0.6,
-          "duration": 0.5,
-          "beat": 6
+          "velocity": 0.6
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 6.5,
           "channelId": "ch1",
+          "instrumentId": "waltzPiano",
+          "note": "F5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 6.5,
+          "channelId": "ch1",
+          "instrumentId": "waltzPiano",
           "note": "E5",
-          "velocity": 0.9,
-          "duration": 2.5,
-          "beat": 6.5
+          "velocity": 0.9
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 9,
           "channelId": "ch1",
+          "instrumentId": "waltzPiano",
+          "note": "E5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 9,
+          "channelId": "ch1",
+          "instrumentId": "waltzPiano",
           "note": "D5",
-          "velocity": 0.7,
-          "duration": 0.5,
-          "beat": 9
+          "velocity": 0.7
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 9.5,
           "channelId": "ch1",
+          "instrumentId": "waltzPiano",
+          "note": "D5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 9.5,
+          "channelId": "ch1",
+          "instrumentId": "waltzPiano",
           "note": "C5",
-          "velocity": 0.8,
-          "duration": 2.5,
-          "beat": 9.5
+          "velocity": 0.8
+        },
+        {
+          "type": "NoteOff",
+          "beat": 12,
+          "channelId": "ch1",
+          "instrumentId": "waltzPiano",
+          "note": "C5",
+          "velocity": 0.5
         }
       ]
     },
@@ -129,112 +177,196 @@
       "bars": 4,
       "events": [
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOn",
+          "beat": 0,
           "channelId": "ch2",
+          "instrumentId": "waltzPiano",
           "note": "C3",
-          "velocity": 0.9,
-          "duration": 0.8,
-          "beat": 0
+          "velocity": 0.9
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 0.8,
           "channelId": "ch2",
-          "note": "G3",
-          "velocity": 0.5,
-          "duration": 0.8,
-          "beat": 1
-        },
-        {
-          "type": "InstrumentOn",
           "instrumentId": "waltzPiano",
-          "channelId": "ch2",
-          "note": "G3",
-          "velocity": 0.5,
-          "duration": 0.8,
-          "beat": 2
-        },
-        {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
-          "channelId": "ch2",
           "note": "C3",
-          "velocity": 0.9,
-          "duration": 0.8,
-          "beat": 3
+          "velocity": 0.5
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOn",
+          "beat": 1,
           "channelId": "ch2",
+          "instrumentId": "waltzPiano",
           "note": "G3",
-          "velocity": 0.5,
-          "duration": 0.8,
-          "beat": 4
+          "velocity": 0.5
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 1.8,
           "channelId": "ch2",
+          "instrumentId": "waltzPiano",
           "note": "G3",
-          "velocity": 0.5,
-          "duration": 0.8,
-          "beat": 5
+          "velocity": 0.5
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOn",
+          "beat": 2,
           "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "G3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOff",
+          "beat": 2.8,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "G3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 3,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "C3",
+          "velocity": 0.9
+        },
+        {
+          "type": "NoteOff",
+          "beat": 3.8,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "C3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 4,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "G3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOff",
+          "beat": 4.8,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "G3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 5,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "G3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOff",
+          "beat": 5.8,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "G3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 6,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
           "note": "F3",
-          "velocity": 0.9,
-          "duration": 0.8,
-          "beat": 6
+          "velocity": 0.9
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 6.8,
           "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "F3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 7,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
           "note": "C4",
-          "velocity": 0.5,
-          "duration": 0.8,
-          "beat": 7
+          "velocity": 0.5
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 7.8,
           "channelId": "ch2",
+          "instrumentId": "waltzPiano",
           "note": "C4",
-          "velocity": 0.5,
-          "duration": 0.8,
-          "beat": 8
+          "velocity": 0.5
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOn",
+          "beat": 8,
           "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "C4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOff",
+          "beat": 8.8,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "C4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 9,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
           "note": "C3",
-          "velocity": 0.9,
-          "duration": 0.8,
-          "beat": 9
+          "velocity": 0.9
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOff",
+          "beat": 9.8,
           "channelId": "ch2",
-          "note": "G3",
-          "velocity": 0.5,
-          "duration": 0.8,
-          "beat": 10
+          "instrumentId": "waltzPiano",
+          "note": "C3",
+          "velocity": 0.5
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "waltzPiano",
+          "type": "NoteOn",
+          "beat": 10,
           "channelId": "ch2",
+          "instrumentId": "waltzPiano",
           "note": "G3",
-          "velocity": 0.5,
-          "duration": 0.8,
-          "beat": 11
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOff",
+          "beat": 10.8,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "G3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 11,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "G3",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOff",
+          "beat": 11.8,
+          "channelId": "ch2",
+          "instrumentId": "waltzPiano",
+          "note": "G3",
+          "velocity": 0.5
         }
       ]
     }

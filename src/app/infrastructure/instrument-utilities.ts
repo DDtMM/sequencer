@@ -7,6 +7,8 @@ import { RecursivePartial } from 'tone/build/esm/core/util/Interface';
 export interface InstrumentNode {
   output: Tone.ToneAudioNode;
   trigger: (note: Tone.Unit.Frequency, duration: Tone.Unit.Time, time: Tone.Unit.Time, velocity: number) => void;
+  triggerAttack: (note: Tone.Unit.Frequency, time: Tone.Unit.Time, velocity: number) => void;
+  triggerRelease: (note: Tone.Unit.Frequency, time: Tone.Unit.Time, velocity: number) => void;
   dispose: () => void;
 }
 
@@ -51,6 +53,20 @@ export function buildInstrument(config: Instrument): InstrumentNode {
     });
   };
   
+  // Create separate attack trigger function
+  const triggerAttack = (note: Tone.Unit.Frequency, time: Tone.Unit.Time, velocity: number) => {
+    polySynths.forEach(polySynth => {
+      polySynth.triggerAttack(note, time as number, velocity);
+    });
+  };
+  
+  // Create separate release trigger function
+  const triggerRelease = (note: Tone.Unit.Frequency, time: Tone.Unit.Time, velocity: number) => {
+    polySynths.forEach(polySynth => {
+      polySynth.triggerRelease(note, time as number);
+    });
+  };
+  
   // Create dispose function
   const dispose = () => {
     polySynths.forEach(polySynth => polySynth.dispose());
@@ -61,6 +77,8 @@ export function buildInstrument(config: Instrument): InstrumentNode {
   return {
     output: outputNode,
     trigger,
+    triggerAttack,
+    triggerRelease,
     dispose
   };
 }

@@ -4,7 +4,7 @@ import { buildEffect } from '../infrastructure/effect-utilities';
 import { buildInstrument, InstrumentNode } from '../infrastructure/instrument-utilities';
 import { calculateSongLength } from '../infrastructure/song-utilities';
 import { beatsToTime, getMeterValues } from '../infrastructure/tone-utilities';
-import { InstrumentOnEvent } from '../models/events.model';
+import { NoteOnEvent, NoteOffEvent, PatternOnEvent, PatternOffEvent } from '../models/events.model';
 import { Instrument } from '../models/instruments.model';
 import { ChannelConfig, SongConfig } from '../models/song.model';
 
@@ -246,20 +246,26 @@ export class SequencerService {
     pattern.events.forEach(event => {
       // Only schedule events that occur within the pattern's bar length
       if (event.beat < patternLengthInBeats) {
-        if (event.type === 'InstrumentOn') {
-          this.scheduleInstrumentEvent(event, startBeat);
+        if (event.type === 'NoteOn') {
+          this.scheduleNoteOnEvent(event, startBeat);
           scheduledCount++;
-        } else if (event.type === 'StartPattern') {
+        } else if (event.type === 'NoteOff') {
+          this.scheduleNoteOffEvent(event, startBeat);
+          scheduledCount++;
+        } else if (event.type === 'PatternOn') {
           // Recursively schedule the nested pattern
           const nestedStartBeat = startBeat + event.beat;
           this.schedulePatternEvents(event.patternId, nestedStartBeat);
+          scheduledCount++;
+        } else if (event.type === 'PatternOff') {
+          // Pattern off events are currently just markers, no action needed
           scheduledCount++;
         }
       }
     });
   }
 
-  private scheduleInstrumentEvent(event: InstrumentOnEvent, beat: number): void {
+  private scheduleNoteOnEvent(event: NoteOnEvent, beat: number): void {
     const instrumentNode = this.getOrCreateChannelInstrument(event.channelId, event.instrumentId);
     
     if (!instrumentNode) return;
@@ -270,9 +276,29 @@ export class SequencerService {
     const timeOffset = beatsToTime(absoluteBeat, this.song!.beatsPerBar);
 
     const eventId = Tone.getTransport().schedule((time) => {
-      instrumentNode.trigger(
+      instrumentNode.triggerAttack(
         event.note,
-        beatsToTime(event.duration, this.song!.beatsPerBar),
+        time,
+        event.velocity
+      );
+    }, timeOffset);
+
+    this.scheduledEvents.push(eventId);
+  }
+
+  private scheduleNoteOffEvent(event: NoteOffEvent, beat: number): void {
+    const instrumentNode = this.getOrCreateChannelInstrument(event.channelId, event.instrumentId);
+    
+    if (!instrumentNode) return;
+
+    const absoluteBeat = beat + event.beat;
+    
+    // Convert beat to bars:beats:sixteenths notation
+    const timeOffset = beatsToTime(absoluteBeat, this.song!.beatsPerBar);
+
+    const eventId = Tone.getTransport().schedule((time) => {
+      instrumentNode.triggerRelease(
+        event.note,
         time,
         event.velocity
       );
