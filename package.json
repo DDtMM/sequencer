@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:github-pages": "ng build --base-href /sequencer/ && npx cpy dist/sequencer/browser/index.html dist/sequencer/browser/ --rename 404.html",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:sequencer": "node dist/sequencer/server/server.mjs",
