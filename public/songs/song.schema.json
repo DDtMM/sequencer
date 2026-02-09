@@ -917,48 +917,6 @@
             ],
             "type": "object"
         },
-        "InstrumentOnEvent": {
-            "properties": {
-                "beat": {
-                    "description": "The beat in the song at which this pattern starts.  Can be fractional.",
-                    "type": "number"
-                },
-                "channelId": {
-                    "description": "The channel to play the instrument on.",
-                    "type": "string"
-                },
-                "duration": {
-                    "description": "The duration of the played note in beats.",
-                    "type": "number"
-                },
-                "instrumentId": {
-                    "description": "The instrument to play.",
-                    "type": "string"
-                },
-                "note": {
-                    "$ref": "#/definitions/Frequency",
-                    "description": "The note to play, specified as a frequency or note name."
-                },
-                "type": {
-                    "const": "InstrumentOn",
-                    "type": "string"
-                },
-                "velocity": {
-                    "description": "The velocity of the note, from 0 to 1.",
-                    "type": "number"
-                }
-            },
-            "required": [
-                "beat",
-                "channelId",
-                "duration",
-                "instrumentId",
-                "note",
-                "type",
-                "velocity"
-            ],
-            "type": "object"
-        },
         "JCReverbEffectConfig": {
             "allOf": [
                 {
@@ -986,6 +944,80 @@
                 "triangle"
             ],
             "type": "string"
+        },
+        "NoteOffEvent": {
+            "properties": {
+                "beat": {
+                    "description": "The beat in the song at which this note ends.  Can be fractional.",
+                    "type": "number"
+                },
+                "channelId": {
+                    "description": "The channel the note is playing on.",
+                    "type": "string"
+                },
+                "instrumentId": {
+                    "description": "The instrument playing the note.",
+                    "type": "string"
+                },
+                "note": {
+                    "$ref": "#/definitions/Frequency",
+                    "description": "The note to stop, specified as a frequency or note name."
+                },
+                "type": {
+                    "const": "NoteOff",
+                    "type": "string"
+                },
+                "velocity": {
+                    "description": "The note-off velocity, from 0 to 1.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "beat",
+                "channelId",
+                "instrumentId",
+                "note",
+                "type",
+                "velocity"
+            ],
+            "type": "object"
+        },
+        "NoteOnEvent": {
+            "properties": {
+                "beat": {
+                    "description": "The beat in the song at which this note starts.  Can be fractional.",
+                    "type": "number"
+                },
+                "channelId": {
+                    "description": "The channel to play the instrument on.",
+                    "type": "string"
+                },
+                "instrumentId": {
+                    "description": "The instrument to play.",
+                    "type": "string"
+                },
+                "note": {
+                    "$ref": "#/definitions/Frequency",
+                    "description": "The note to play, specified as a frequency or note name."
+                },
+                "type": {
+                    "const": "NoteOn",
+                    "type": "string"
+                },
+                "velocity": {
+                    "description": "The velocity of the note, from 0 to 1.",
+                    "type": "number"
+                }
+            },
+            "required": [
+                "beat",
+                "channelId",
+                "instrumentId",
+                "note",
+                "type",
+                "velocity"
+            ],
+            "type": "object"
         },
         "Omit<ChannelConfig,\"id\">": {
             "properties": {
@@ -1499,12 +1531,60 @@
         "PatternEvent": {
             "anyOf": [
                 {
-                    "$ref": "#/definitions/InstrumentOnEvent"
+                    "$ref": "#/definitions/NoteOnEvent"
                 },
                 {
-                    "$ref": "#/definitions/StartPatternEvent"
+                    "$ref": "#/definitions/NoteOffEvent"
+                },
+                {
+                    "$ref": "#/definitions/PatternOnEvent"
+                },
+                {
+                    "$ref": "#/definitions/PatternOffEvent"
                 }
             ]
+        },
+        "PatternOffEvent": {
+            "properties": {
+                "beat": {
+                    "description": "The beat in the song at which this pattern ends.  Can be fractional.",
+                    "type": "number"
+                },
+                "patternId": {
+                    "type": "string"
+                },
+                "type": {
+                    "const": "PatternOff",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "beat",
+                "patternId",
+                "type"
+            ],
+            "type": "object"
+        },
+        "PatternOnEvent": {
+            "properties": {
+                "beat": {
+                    "description": "The beat in the song at which this pattern starts.  Can be fractional.",
+                    "type": "number"
+                },
+                "patternId": {
+                    "type": "string"
+                },
+                "type": {
+                    "const": "PatternOn",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "beat",
+                "patternId",
+                "type"
+            ],
+            "type": "object"
         },
         "PhaserEffectConfig": {
             "allOf": [
@@ -2153,27 +2233,6 @@
             "required": [
                 "beat",
                 "patternId"
-            ],
-            "type": "object"
-        },
-        "StartPatternEvent": {
-            "properties": {
-                "beat": {
-                    "description": "The beat in the song at which this pattern starts.  Can be fractional.",
-                    "type": "number"
-                },
-                "patternId": {
-                    "type": "string"
-                },
-                "type": {
-                    "const": "StartPattern",
-                    "type": "string"
-                }
-            },
-            "required": [
-                "beat",
-                "patternId",
-                "type"
             ],
             "type": "object"
         },

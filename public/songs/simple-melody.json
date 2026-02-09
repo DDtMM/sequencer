@@ -11,12 +11,14 @@
     {
       "id": "ch1",
       "pan": 0,
-      "effects": [      {
-        "name": "pingPongDelay",
-        "delayTime": "1n",
-        "feedback": 0.15,
-        "wet": 0.5
-      }]
+      "effects": [
+        {
+          "name": "pingPongDelay",
+          "delayTime": "1n",
+          "feedback": 0.15,
+          "wet": 0.5
+        }
+      ]
     }
   ],
   "instruments": [
@@ -41,72 +43,121 @@
   "patterns": [
     {
       "id": "melody",
+      "bars": 2,
       "events": [
         {
-          "type": "InstrumentOn",
-          "instrumentId": "synth1",
+          "type": "NoteOn",
+          "beat": 0,
           "channelId": "ch1",
+          "instrumentId": "synth1",
           "note": "C4",
-          "velocity": 0.8,
-          "duration": 1,
-          "beat": 0
+          "velocity": 0.8
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "synth1",
+          "type": "NoteOff",
+          "beat": 1,
           "channelId": "ch1",
+          "instrumentId": "synth1",
+          "note": "C4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 1,
+          "channelId": "ch1",
+          "instrumentId": "synth1",
           "note": "E4",
-          "velocity": 0.8,
-          "duration": 1,
-          "beat": 1
+          "velocity": 0.8
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "synth1",
+          "type": "NoteOff",
+          "beat": 2,
           "channelId": "ch1",
+          "instrumentId": "synth1",
+          "note": "E4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 2,
+          "channelId": "ch1",
+          "instrumentId": "synth1",
           "note": "G4",
-          "velocity": 0.8,
-          "duration": 1,
-          "beat": 2
+          "velocity": 0.8
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "synth1",
+          "type": "NoteOff",
+          "beat": 3,
           "channelId": "ch1",
+          "instrumentId": "synth1",
+          "note": "G4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 3,
+          "channelId": "ch1",
+          "instrumentId": "synth1",
           "note": "C5",
-          "velocity": 0.8,
-          "duration": 1,
-          "beat": 3
+          "velocity": 0.8
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "synth1",
+          "type": "NoteOff",
+          "beat": 4,
           "channelId": "ch1",
+          "instrumentId": "synth1",
+          "note": "C5",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 4,
+          "channelId": "ch1",
+          "instrumentId": "synth1",
           "note": "G4",
-          "velocity": 0.8,
-          "duration": 1,
-          "beat": 4
+          "velocity": 0.8
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "synth1",
+          "type": "NoteOff",
+          "beat": 5,
           "channelId": "ch1",
+          "instrumentId": "synth1",
+          "note": "G4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 5,
+          "channelId": "ch1",
+          "instrumentId": "synth1",
           "note": "E4",
-          "velocity": 0.8,
-          "duration": 1,
-          "beat": 5
+          "velocity": 0.8
         },
         {
-          "type": "InstrumentOn",
-          "instrumentId": "synth1",
+          "type": "NoteOff",
+          "beat": 6,
           "channelId": "ch1",
+          "instrumentId": "synth1",
+          "note": "E4",
+          "velocity": 0.5
+        },
+        {
+          "type": "NoteOn",
+          "beat": 6,
+          "channelId": "ch1",
+          "instrumentId": "synth1",
           "note": "C4",
-          "velocity": 0.8,
-          "duration": 2,
-          "beat": 6
+          "velocity": 0.8
+        },
+        {
+          "type": "NoteOff",
+          "beat": 8,
+          "channelId": "ch1",
+          "instrumentId": "synth1",
+          "note": "C4",
+          "velocity": 0.5
         }
-      ],
-      "bars": 2
+      ]
     }
   ],
   "sequence": [

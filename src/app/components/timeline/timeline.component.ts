@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, input, computed, effect, viewChild, ElementRef } from '@angular/core';
 import { SongConfig, } from '../../models/song.model';
-import { InstrumentOnEvent, StartPatternEvent } from '../../models/events.model';
+import { NoteOnEvent, NoteOffEvent, PatternOnEvent, PatternOffEvent } from '../../models/events.model';
 import { SequencerState } from '../../services/sequencer.service';
 
 interface VisualEvent {
@@ -171,25 +171,55 @@ export class TimelineComponent {
     const beatsPerBar = song.beatsPerBar;
     const patternLengthInBeats = pattern.bars * beatsPerBar;
 
+    // Collect note on/off pairs to calculate duration
+    const noteOnMap = new Map<string, NoteOnEvent>();
+    
     pattern.events.forEach(event => {
       if (event.beat >= patternLengthInBeats) {
         return;
       }
 
-      if (event.type === 'InstrumentOn') {
-        const instEvent = event as InstrumentOnEvent;
-        events.push({
-          type: 'instrument',
-          instrumentId: instEvent.instrumentId,
-          channelId: instEvent.channelId,
-          startBeat: startBeat + instEvent.beat,
-          duration: instEvent.duration,
-          color: this.getInstrumentColor(instEvent.instrumentId),
-          note: instEvent.note.toString(),
-          isNested
-        });
-      } else if (event.type === 'StartPattern') {
-        const patEvent = event as StartPatternEvent;
+      if (event.type === 'NoteOn') {
+        const noteOnEvent = event as NoteOnEvent;
+        // Create a unique key for this note
+        const key = `${noteOnEvent.channelId}:${noteOnEvent.instrumentId}:${noteOnEvent.note}:${noteOnEvent.beat}`;
+        noteOnMap.set(key, noteOnEvent);
+      } else if (event.type === 'NoteOff') {
+        const noteOffEvent = event as NoteOffEvent;
+        // Find the corresponding note on event
+        const key = `${noteOffEvent.channelId}:${noteOffEvent.instrumentId}:${noteOffEvent.note}`;
+        
+        // Look for the most recent NoteOn event for this note that hasn't been paired yet
+        let matchedNoteOn: NoteOnEvent | undefined;
+        let matchedKey: string | undefined;
+        
+        for (const [k, noteOn] of noteOnMap.entries()) {
+          if (k.startsWith(key + ':') && noteOn.beat <= noteOffEvent.beat) {
+            if (!matchedNoteOn || noteOn.beat > matchedNoteOn.beat) {
+              matchedNoteOn = noteOn;
+              matchedKey = k;
+            }
+          }
+        }
+        
+        if (matchedNoteOn && matchedKey) {
+          // Create visual event with calculated duration
+          events.push({
+            type: 'instrument',
+            instrumentId: matchedNoteOn.instrumentId,
+            channelId: matchedNoteOn.channelId,
+            startBeat: startBeat + matchedNoteOn.beat,
+            duration: noteOffEvent.beat - matchedNoteOn.beat,
+            color: this.getInstrumentColor(matchedNoteOn.instrumentId),
+            note: matchedNoteOn.note.toString(),
+            isNested
+          });
+          
+          // Remove the paired NoteOn
+          noteOnMap.delete(matchedKey);
+        }
+      } else if (event.type === 'PatternOn') {
+        const patEvent = event as PatternOnEvent;
         const nestedPattern = song.patterns.find(p => p.id === patEvent.patternId);
         const nestedDuration = nestedPattern ? nestedPattern.bars * beatsPerBar : 1;
 
@@ -210,6 +240,20 @@ export class TimelineComponent {
         this.processPattern(song, patEvent.patternId, startBeat + patEvent.beat, events, true);
       }
     });
+    
+    // Handle any unpaired NoteOn events (treat as very short duration)
+    for (const noteOn of noteOnMap.values()) {
+      events.push({
+        type: 'instrument',
+        instrumentId: noteOn.instrumentId,
+        channelId: noteOn.channelId,
+        startBeat: startBeat + noteOn.beat,
+        duration: 0.125, // Default short duration for unpaired notes
+        color: this.getInstrumentColor(noteOn.instrumentId),
+        note: noteOn.note.toString(),
+        isNested
+      });
+    }
   }
 
 }
