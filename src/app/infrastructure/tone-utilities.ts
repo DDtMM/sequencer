@@ -28,3 +28,25 @@ export function beatsToTime(durationInBeats: number, beatsPerBar: number = 4): T
   
   return `${wholeBars}:${wholeBeats}:${sixteenths}` as Tone.Unit.Time;
 }
+
+
+/** 
+ * Normalizes meter values to an array of numbers for expected channels. 
+ * Any missing channels will be filled with -Infinity to indicate silence.
+*/
+export function getMeterValues(meter: Tone.Meter | undefined, expectedChannels: number): number[] {
+  if (expectedChannels <= 0) {
+    console.warn('Expected channels must be greater than 0');
+    return [];
+  }
+  if (!meter) {
+    return new Array(expectedChannels).fill(-Infinity);
+  }
+  const value = meter.getValue();
+  const normalizedResults: number[] = Array.isArray(value) ? value : [value];
+  if (normalizedResults.length < expectedChannels) {
+    const padding = new Array(expectedChannels - normalizedResults.length).fill(-Infinity);
+    return normalizedResults.concat(padding);
+  }
+  return normalizedResults;
+}

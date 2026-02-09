@@ -3,7 +3,7 @@ import * as Tone from 'tone';
 import { buildEffect } from '../infrastructure/effect-utilities';
 import { buildInstrument, InstrumentNode } from '../infrastructure/instrument-utilities';
 import { calculateSongLength } from '../infrastructure/song-utilities';
-import { beatsToTime } from '../infrastructure/tone-utilities';
+import { beatsToTime, getMeterValues } from '../infrastructure/tone-utilities';
 import { InstrumentOnEvent } from '../models/events.model';
 import { Instrument } from '../models/instruments.model';
 import { ChannelConfig, SongConfig } from '../models/song.model';
@@ -35,9 +35,7 @@ export class SequencerService {
   private scheduledEvents: number[] = [];
   private updateBeatTrackingInterval: number | undefined = undefined;
   
-  // Analyzers for L/R visualization
-  private leftMeter: Tone.Meter | undefined = undefined;
-  private rightMeter: Tone.Meter | undefined = undefined;
+  private masterMeter: Tone.Meter | undefined = undefined;
 
   state = signal<SequencerState>({
     positionAtStart: 0,
@@ -58,7 +56,7 @@ export class SequencerService {
     this.createMasterChannel(song.masterChannel);
     this.createChannels(song.channels);
     this.storeInstrumentConfigs(song.instruments);
-    this.createAnalyzers(this.masterChannel!);
+    this.createMasterMeter(this.masterChannel!);
     //this.createAnalyzers(this.channels.get(song.channels[0].id)!);
 
     const songLength = calculateSongLength(song);
@@ -66,30 +64,14 @@ export class SequencerService {
     this.state.update(s => ({ ...s, songLength, isLooping: song.loop || false }));
   }
 
-  private createAnalyzers(channel: Tone.Channel): void {
-    // Create a splitter to separate L/R channels
-    const splitter = new Tone.Split();
-    
-    // Create meters for each channel
-    this.leftMeter = new Tone.Meter();
-    this.rightMeter = new Tone.Meter();
-   
-    channel.connect(splitter);
-    
-    splitter.connect(this.leftMeter, 0); // Left channel to left meter
-    
-    splitter.connect(this.rightMeter, 1); // Right channel to right meter
-    
+  private createMasterMeter(channel: Tone.Channel): void {
+    this.masterMeter = new Tone.Meter({ channelCount: 2 });
+    channel.connect(this.masterMeter);
   }
 
-  getLeftLevel(): number {
-    const value = this.leftMeter?.getValue();
-    return typeof value === 'number' ? value : (Array.isArray(value) ? value[0] : -Infinity);
-  }
-
-  getRightLevel(): number {
-    const value = this.rightMeter?.getValue();
-    return typeof value === 'number' ? value : (Array.isArray(value) ? value[0] : -Infinity);
+  /** Gets meter levels for left and right channels. */
+  getMasterLevels(): number[] {
+    return getMeterValues(this.masterMeter, 2);
   }
 
   private createMasterChannel(channelConfig: Omit<ChannelConfig, 'id'>): void {
@@ -352,14 +334,9 @@ export class SequencerService {
     this.channels.forEach(ch => ch.dispose());
     this.channels.clear();
     
-    // Dispose analyzers
-    if (this.leftMeter) {
-      this.leftMeter.dispose();
-      this.leftMeter = undefined;
-    }
-    if (this.rightMeter) {
-      this.rightMeter.dispose();
-      this.rightMeter = undefined;
+    if (this.masterMeter) {
+      this.masterMeter.dispose();
+      this.masterMeter = undefined;
     }
 
     if (this.masterChannel) {

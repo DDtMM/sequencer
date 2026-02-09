@@ -29,13 +29,12 @@ export class LrAnalyzer {
 
   private startAnimation(): void {
     const update = () => {
-      const leftDb = this.sequencer.getLeftLevel();
-      const rightDb = this.sequencer.getRightLevel();
+      const levels = this.sequencer.getMasterLevels();
       
       // Convert from dB to 0-100 range for visualization
       // Clamp between -60dB and 0dB
-      const leftPercent = Math.max(0, Math.min(100, ((leftDb + 60) / 60) * 100));
-      const rightPercent = Math.max(0, Math.min(100, ((rightDb + 60) / 60) * 100));
+      const leftPercent = Math.max(0, Math.min(100, ((levels[0] + 60) / 60) * 100));
+      const rightPercent = Math.max(0, Math.min(100, ((levels[1] + 60) / 60) * 100));
       
       this.leftLevel.set(leftPercent);
       this.rightLevel.set(rightPercent);

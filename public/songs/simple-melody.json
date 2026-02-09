@@ -10,7 +10,7 @@
   "channels": [
     {
       "id": "ch1",
-      "pan": -0.99,
+      "pan": 0,
       "effects": [      {
         "name": "pingPongDelay",
         "delayTime": "1n",
